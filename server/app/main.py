@@ -64,18 +64,19 @@ from pydantic import BaseModel
 from typing import Dict
 import time
 
-from .models import UploadResponse, ContractExtraction
-from . import ocr, extract
+from .models import UploadResponse, ContractExtraction, RiskSummary, RiskRequest, RiskFlag  # ← ADD RiskFlag
+from . import ocr, extract, risk
 
 app = FastAPI(title="AIX CLM Backend — Upload/OCR/Extraction")
+
 @app.get("/", include_in_schema=False)
 def root():
-    return {"ok": True, "service": "AIX CLM Backend", "endpoints": ["/api/health", "/api/upload", "/api/extract"]}
+    return {"ok": True, "service": "AIX CLM Backend", "endpoints": ["/api/health", "/api/upload", "/api/extract", "/api/risk"]}
 
 # CORS — adjust origins for your React dev server
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "*"],  # tighten in prod
+    allow_origins=["http://localhost:5173", "*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -87,9 +88,9 @@ META: Dict[str, dict] = {}      # doc_id -> meta (pages, timings)
 
 class ExtractRequest(BaseModel):
     doc_id: str
-    use_llm: bool = True          # toggle LLM extraction
-    fallback_rules: bool = True   # enable rule-based fallback
-    lang_hint: str | None = None  # 'en' | 'ar' | None
+    use_llm: bool = True
+    fallback_rules: bool = True
+    lang_hint: str | None = None
 
 @app.get("/api/health")
 def health():
@@ -119,4 +120,55 @@ async def api_extract(req: ExtractRequest):
         raise HTTPException(status_code=404, detail="doc_id not found")
     return extract.run(text, use_llm=req.use_llm, fallback_rules=req.fallback_rules, lang_hint=req.lang_hint)
 
-
+# KEEP BOTH VERSIONS FOR COMPATIBILITY
+@app.post("/api/risk", response_model=RiskSummary)
+async def api_risk(body: dict):  # ← KEEP your colleague's parameter style
+    """Run comprehensive risk analysis - compatible with both styles"""
+    doc_id = body.get("doc_id")
+    extraction_data = body.get("extraction")
+    
+    text = DOCS.get(doc_id)
+    if not text:
+        raise HTTPException(status_code=404, detail="doc_id not found")
+    
+    # Convert extraction to the format your risk module expects
+    if isinstance(extraction_data, dict):
+        # Handle dict format (your colleague's style)
+        extracted_data = {
+            "parties": extraction_data.get("parties", []),
+            "dates": extraction_data.get("dates", {}),
+            "financial": extraction_data.get("financial", {}),
+            "jurisdiction": extraction_data.get("governing_law", "")
+        }
+    else:
+        # Handle Pydantic model format (your style)
+        extracted_data = {
+            "parties": [{"name": p.name, "role": p.role} for p in extraction_data.parties],
+            "dates": {
+                "effective_date": extraction_data.effective_date,
+                "expiration_date": extraction_data.expiry_date
+            },
+            "financial": {
+                "paymentTerms": next((f.text for f in extraction_data.financials if "payment" in f.label.lower()), ""),
+                "amount": next((f.amount for f in extraction_data.financials if f.amount), None)
+            },
+            "jurisdiction": extraction_data.governing_law or ""
+        }
+    
+    # Run your risk analysis
+    risk_assessment = await risk.analyze_contract_risk(text, extracted_data)
+    
+    # Convert to the expected RiskSummary format
+    return RiskSummary(
+        score=risk_assessment.overall_score,
+        flags=[
+            RiskFlag(
+                title=flag.title,
+                severity=flag.severity.capitalize(),
+                explanation=flag.description,
+                suggested_fix_text=flag.recommendation,
+                clause_excerpt=flag.clause_reference
+            )
+            for flag in risk_assessment.flags[:10]  # Limit to top 10 flags
+        ]
+    )
