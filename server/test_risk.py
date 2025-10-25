@@ -52,9 +52,11 @@ async def main():
     
     print(f"\n{'='*60}")
     print("COMPLIANCE STATUS:")
-    for standard, status in result.compliance_status.items():
-        icon = "✅" if status else "❌"
-        print(f"{icon} {standard}")
+    for check in result.compliance_checks:
+        status_icon = "✅" if check.status == "compliant" else "❌" if check.status == "non_compliant" else "⚠️"
+        print(f"{status_icon} {check.regulation}: {check.status.upper()}")
+        for issue in check.issues:
+            print(f"   - {issue}")
 
 if __name__ == "__main__":
     asyncio.run(main())
