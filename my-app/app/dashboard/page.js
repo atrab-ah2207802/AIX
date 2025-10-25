@@ -1,7 +1,11 @@
+"use client";
+
+import React, { useRef } from "react";
 import Extraction from "@/components/Extraction";
 import RiskAnalysis from "@/components/RiskAnalysis";
 
 export default function Dashboard() {
+
   const data1={
     "parties": [
       {
@@ -60,172 +64,211 @@ export default function Dashboard() {
     "raw_summary": "Here's a concise summary of the Software Development Agreement:\n\n*   *Purpose:* Supplier (Corelight Technologies) will develop a responsive website and mobile application for Client (Blue Fin Consulting).\n*   *Deliverables & Key Dates:* Website and mobile application delivery by March 30, 2025. The agreement is effective January 1, 2025, expires December 31, 2025, and auto-renews annually unless canceled with 60 days' notice.\n*   *Payment:* Client pays a fixed fee of QAR 45,000 within 30 days of delivery, with 1.5% monthly interest on late payments.\n*   *Governing Law:* The agreement is governed by the laws of the State of Qatar."
   }
   const data2= {
-    "overall_score": 42,
-    "risk_level": "high",
-    "summary": "This contract has significant risk with 3 critical and 4 high-priority QDB standard violations. Legal review strongly recommended.",
+    "overall_score": 65,
+    "risk_level": "medium",
+    "summary": "Moderate risk: 3 deviations from company standards found",
     "flags": [
       {
-        "severity": "critical",
-        "category": "non_standard",
-        "title": "Unlimited Liability Clause",
-        "description": "Contract contains unlimited liability exposing QDB to significant financial risk. QDB standard limits liability to contract value.",
-        "recommendation": "Add liability cap at total contract value and exclude indirect damages",
-        "clause_reference": "Article 5: Liability",
-        "confidence": 0.95
-      },
-      {
-        "severity": "critical",
-        "category": "non_standard",
-        "title": "Non-Qatar Jurisdiction",
-        "description": "Contract specifies UK jurisdiction instead of QDB standard Qatar jurisdiction. This creates legal enforcement risks.",
-        "recommendation": "Change governing law to Qatar and specify Qatar courts for disputes",
-        "clause_reference": "Article 2: Governing Law",
-        "confidence": 0.98
-      },
-      {
-        "severity": "critical",
-        "category": "non_standard",
-        "title": "Unfavorable IP Ownership",
-        "description": "Supplier owns all intellectual property vs QDB standard joint ownership. This risks QDB's investment in developed assets.",
-        "recommendation": "Revise to joint IP ownership or QDB ownership of deliverables",
-        "clause_reference": "Article 8: Intellectual Property",
-        "confidence": 0.92
-      },
-      {
         "severity": "high",
-        "category": "non_standard",
-        "title": "Weak Confidentiality Protection",
-        "description": "Missing 2-year survival period and proprietary information definition. QDB standard includes comprehensive protection.",
-        "recommendation": "Add 2-year confidentiality duration and define protected information",
-        "clause_reference": "Article 6: Confidentiality",
-        "confidence": 0.88
-      },
-      {
-        "severity": "high",
-        "category": "non_standard",
-        "title": "Excessive Termination Notice",
-        "description": "90-day termination notice vs QDB standard 30-day notice. This restricts business flexibility.",
-        "recommendation": "Negotiate for standard 30-day termination notice",
-        "clause_reference": "Article 7: Termination",
-        "confidence": 0.85
-      },
-      {
-        "severity": "medium",
         "category": "missing_clause",
-        "title": "Missing Force Majeure Protection",
-        "description": "Contract lacks force majeure clause. QDB standard includes protection for unforeseen events.",
-        "recommendation": "Add force majeure clause covering natural disasters and government actions",
-        "clause_reference": "Not Found",
-        "confidence": 0.78
+        "title": "Missing Indemnification Clause",
+        "description": "Standard indemnification clause not found (appeared in 2 company contracts)",
+        "recommendation": "Add comprehensive indemnification clause matching company standards",
+        "clause_reference": "indemnification Section",
+        "confidence": 0.4
       },
       {
-        "severity": "medium",
-        "category": "unfavorable_term",
-        "title": "Unclear Payment Terms",
-        "description": "Payment terms lack specific due dates and late payment penalties. QDB standard specifies Net 30 with interest.",
-        "recommendation": "Specify exact payment schedule and late payment interest rates",
-        "clause_reference": "Article 4: Financial Terms",
-        "confidence": 0.75
+        "severity": "critical",
+        "category": "non_standard",
+        "title": "Non-Standard Warranties",
+        "description": "The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifications, and non-infringement.; The company standard explicitly disclaims implied warranties of merchantability and fitness for a particular purpose, but the contract clause's \"as is\" provision is a much broader and more aggressive disclaimer that negates even basic expectations of software functionality.; The company standard provides specific remedies for breach of warranty (correction, replacement, or refund), which are entirely absent in the contract clause.",
+        "recommendation": "The contract clause significantly deviates from company standards by disclaiming all warranties. It is recommended to revise the clause to incorporate the company's standard warranty provisions, including express warranties on quality, non-infringement, and remedies for breach. At a minimum, the 'as is' clause should be removed and replaced with more balanced warranty language.",
+        "clause_reference": "warranties Section",
+        "confidence": 0.8
+      },
+      {
+        "severity": "high",
+        "category": "missing_clause",
+        "title": "Missing Dispute Resolution Clause",
+        "description": "Standard dispute_resolution clause not found (appeared in 3 company contracts)",
+        "recommendation": "Add comprehensive dispute_resolution clause matching company standards",
+        "clause_reference": "dispute_resolution Section",
+        "confidence": 0.6
       }
     ],
     "recommendations": [
-      "Add liability cap at total contract value",
-      "Change governing law to Qatar jurisdiction",
-      "Revise IP ownership to joint or QDB ownership",
-      "Add comprehensive confidentiality with 2-year duration",
-      "Negotiate 30-day termination notice period",
-      "Include force majeure protection clause",
-      "Specify clear payment terms with penalties"
+      "Add comprehensive dispute_resolution clause matching company standards",
+      "The contract clause significantly deviates from company standards by disclaiming all warranties. It is recommended to revise the clause to incorporate the company's standard warranty provisions, including express warranties on quality, non-infringement, and remedies for breach. At a minimum, the 'as is' clause should be removed and replaced with more balanced warranty language.",
+      "Add comprehensive indemnification clause matching company standards"
     ],
-    "compliance_checks": [
-      {
-        "regulation": "Qatar Commercial Law - Article 1",
-        "status": "non_compliant",
-        "issues": ["No Qatar jurisdiction specified"],
-        "recommendations": ["Add 'This contract shall be governed by Qatar law'"]
-      },
-      {
-        "regulation": "Qatar Commercial Law - Article 172",
-        "status": "non_compliant", 
-        "issues": ["Payment terms not clearly specified"],
-        "recommendations": ["Specify exact payment amounts, due dates, and methods"]
-      }
-    ],
+
     "term_consistency": [
       {
-        "term": "Confidential Information",
-        "definitions": ["information that should be kept private", "proprietary business information"],
-        "is_consistent": false,
-        "issue_description": "Term defined 2 different ways throughout contract"
+        "term": "Confidential",
+        "definitions": [
+          "References to confidential found in contract"
+        ],
+        "is_consistent": true,
+        "issue_description": null
       },
       {
-        "term": "Effective Date",
-        "definitions": ["01 Jan 2025"],
+        "term": "Termination",
+        "definitions": [
+          "References to termination found in contract"
+        ],
+        "is_consistent": true,
+        "issue_description": null
+      },
+      {
+        "term": "Liability",
+        "definitions": [
+          "References to liability found in contract"
+        ],
+        "is_consistent": true,
+        "issue_description": null
+      },
+      {
+        "term": "Payment",
+        "definitions": [
+          "References to payment found in contract"
+        ],
+        "is_consistent": true,
+        "issue_description": null
+      },
+      {
+        "term": "Warrant",
+        "definitions": [
+          "References to warrant found in contract"
+        ],
         "is_consistent": true,
         "issue_description": null
       }
     ],
     "clause_comparisons": [
       {
-        "clause_type": "confidentiality",
-        "standard_version": "Both parties shall maintain confidentiality of all proprietary information for 2 years after termination...",
-        "contract_version": "Both parties shall keep confidential information strictly confidential...",
-        "deviation_severity": "major",
-        "explanation": "Missing 2-year duration and proprietary information definition"
+        "clause_type": "indemnification",
+        "standard_version": "Company standard indemnification clause",
+        "contract_version": "Standard indemnification clause not found (appeared in 2 company contracts)...",
+        "deviation_severity": "high",
+        "explanation": "Standard indemnification clause not found (appeared in 2 company contracts)"
       },
       {
-        "clause_type": "termination",
-        "standard_version": "Either party may terminate with 30 days written notice...",
-        "contract_version": "Either party may terminate with 90 days written notice...", 
-        "deviation_severity": "major",
-        "explanation": "90-day notice vs standard 30-day notice"
+        "clause_type": "warranties",
+        "standard_version": "Company standard warranties clause",
+        "contract_version": "The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifica...",
+        "deviation_severity": "critical",
+        "explanation": "The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifications, and non-infringement.; The company standard explicitly disclaims implied warranties of merchantability and fitness for a particular purpose, but the contract clause's \"as is\" provision is a much broader and more aggressive disclaimer that negates even basic expectations of software functionality.; The company standard provides specific remedies for breach of warranty (correction, replacement, or refund), which are entirely absent in the contract clause."
+      },
+      {
+        "clause_type": "dispute_resolution",
+        "standard_version": "Company standard dispute_resolution clause",
+        "contract_version": "Standard dispute_resolution clause not found (appeared in 3 company contracts)...",
+        "deviation_severity": "high",
+        "explanation": "Standard dispute_resolution clause not found (appeared in 3 company contracts)"
       }
     ],
     "legal_advice": [
       {
-        "topic": "Liability and Risk Exposure",
-        "advice": "The unlimited liability clause creates significant financial exposure for QDB. Under Qatar Commercial Law Article 172, parties should agree on reasonable liability limits. We recommend capping liability at the total contract value and excluding indirect damages to protect QDB's interests.",
-        "risk_level": "critical",
-        "supporting_law": "Qatar Commercial Law Article 172",
+        "topic": "Missing Indemnification Clause",
+        "advice": "This clause poses significant legal risk that should be addressed. Standard indemnification clause not found (appeared in 2 company contracts)",
+        "risk_level": "high",
+        "supporting_law": "General Contract Law Principles",
         "recommendations": [
-          "Cap liability at total contract value",
-          "Exclude indirect and consequential damages", 
-          "Add mutual limitation of liability"
+          "Add comprehensive indemnification clause matching company standards"
         ]
       },
       {
-        "topic": "Jurisdiction and Enforcement",
-        "advice": "UK jurisdiction creates significant enforcement risks in Qatar. Qatari courts may not recognize foreign judgments easily. Under Qatar Civil Procedure Law, specifying Qatar jurisdiction ensures proper legal recourse and enforcement mechanisms.",
-        "risk_level": "critical", 
-        "supporting_law": "Qatar Civil Procedure Law Article 12",
+        "topic": "Non-Standard Warranties",
+        "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifications, and non-infringement.; The company standard explicitly disclaims implied warranties of merchantability and fitness for a particular purpose, but the contract clause's \"as is\" provision is a much broader and more aggressive disclaimer that negates even basic expectations of software functionality.; The company standard provides specific remedies for breach of warranty (correction, replacement, or refund), which are entirely absent in the contract clause.",
+        "risk_level": "critical",
+        "supporting_law": "General Contract Law Principles",
         "recommendations": [
-          "Specify Qatar as governing law",
-          "Designate Qatari courts for disputes",
-          "Consider Qatar International Court for international matters"
+          "The contract clause significantly deviates from company standards by disclaiming all warranties. It is recommended to revise the clause to incorporate the company's standard warranty provisions, including express warranties on quality, non-infringement, and remedies for breach. At a minimum, the 'as is' clause should be removed and replaced with more balanced warranty language."
+        ]
+      },
+      {
+        "topic": "Missing Dispute Resolution Clause",
+        "advice": "This clause poses significant legal risk that should be addressed. Standard dispute_resolution clause not found (appeared in 3 company contracts)",
+        "risk_level": "high",
+        "supporting_law": "General Contract Law Principles",
+        "recommendations": [
+          "Add comprehensive dispute_resolution clause matching company standards"
         ]
       }
     ],
-    "analyzed_at": "2024-01-15T14:30:00Z",
+    "analyzed_at": "2025-10-25T17:21:03.044749",
     "contract_metadata": {
-      "contract_name": "sample_contract.docx",
+      "contract_name": "analyzed_contract.docx",
       "parties": [
-        {"name": "Corelight Technologies, Inc.", "role": "Supplier"},
-        {"name": "Blue Fin Consulting W.L.L", "role": "Client"}
+        {
+          "name": "QDB",
+          "role": "Client"
+        },
+        {
+          "name": "Vendor",
+          "role": "Supplier"
+        }
       ],
       "effective_date": "2025-01-01",
       "expiry_date": "2025-12-31",
-      "total_value": "QAR 45,000",
-      "extracted_clauses_count": 8
+      "total_value": "Value specified in payment terms",
+      "extracted_clauses_count": 1
     }
   }
+  let data3={}
+
+const reportRef = useRef(null);
+
+  // PDF Export
+  const exportPDF = () => {
+    if (!reportRef.current) return;
+  
+    // Force all text to black
+    const originalColor = reportRef.current.style.color;
+    reportRef.current.style.color = "black";
+  
+    const opt = {
+      margin: 0.5,
+      filename: `Contract_Report_${new Date().toISOString().slice(0, 10)}.pdf`,
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+    };
+  
+    html2pdf().set(opt).from(reportRef.current).save().finally(() => {
+      // Restore original color
+      reportRef.current.style.color = originalColor;
+    });
+  };
+
+  // JSON Export
+  const exportJSON = () => {
+    const blob = new Blob([JSON.stringify({ data1, data2 }, null, 2)], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `Contract_Report_${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+  };
 
 
 
   return (
-    <form>
-    <Extraction data={data1}></Extraction>
-    <RiskAnalysis data={data2}></RiskAnalysis>
-    </form>
+    
+    <div className="all-data" style={{ padding: "2rem" }}>
+      <div className="export-buttons">
+  <button onClick={exportPDF}>Export PDF</button>
+  <button onClick={exportJSON}>Export JSON</button>
+</div>
 
+<div className="gap"></div>
+  
+      <div  ref={reportRef} >
+        <Extraction data={data1} />
+        <RiskAnalysis data={data2} />
+      </div>
+      <footer className="report-footer">
+        <small>Generated by Contice Extraction</small>
+      </footer>
+    </div>
   );
 }
