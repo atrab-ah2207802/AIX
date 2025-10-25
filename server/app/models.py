@@ -98,3 +98,17 @@ class UploadResponse(BaseModel):
     meta: dict
 
 
+class RiskFlag(BaseModel):
+    title: str
+    severity: Literal["Low", "Medium", "High", "Critical"]
+    explanation: str
+    suggested_fix_text: Optional[str] = None
+    clause_excerpt: Optional[str] = None
+
+class RiskSummary(BaseModel):
+    score: int
+    flags: List[RiskFlag] = []
+
+class RiskRequest(BaseModel):
+    doc_id: str
+    extraction: ContractExtraction  # Reuse the extraction model
