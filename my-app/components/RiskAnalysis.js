@@ -12,6 +12,11 @@ export default function RiskAnalysis({ data }) {
     low: "flag-low",
   };
 
+  const complianceSeverityClasses = {
+    non_compliant: "compliance-non-compliant",
+    compliant: "compliance-compliant",
+    unknown: "compliance-unknown",
+  };
 
   return (
     <div><h1>Risk analysis</h1>
@@ -125,6 +130,81 @@ export default function RiskAnalysis({ data }) {
 )}
 
     </div>
+    <div className="legal-compliance-section">
+  <h1>Legal Compliance</h1>
+
+  {data.legal_compliance && (
+    <div className="extraction-section legal-compliance">
+
+      {/* Overall Compliance Summary */}
+      <div className="compliance-summary">
+        <div>
+          <strong>Overall Compliance Score:</strong>{" "}
+          <span className="score-value">
+            {data.legal_compliance.compliance_summary.overall_compliance_score}%
+          </span>
+        </div>
+        <div>
+          <strong>Status:</strong>{" "}
+          <span
+            className={`compliance-status ${
+              complianceSeverityClasses[
+                data.legal_compliance.compliance_summary.status
+              ] || "compliance-unknown"
+            }`}
+          >
+            {data.legal_compliance.compliance_summary.status.replace("_", " ")}
+          </span>
+        </div>
+        <div>
+          <strong>Total Laws Analyzed:</strong>{" "}
+          {data.legal_compliance.compliance_summary.total_laws_analyzed}
+        </div>
+        <div>
+          <strong>Compliant Laws:</strong>{" "}
+          {data.legal_compliance.compliance_summary.compliant_laws}
+        </div>
+        <div>
+          <strong>Non-Compliant Laws:</strong>{" "}
+          {data.legal_compliance.compliance_summary.non_compliant_laws}
+        </div>
+        <div>
+          <strong>Critical Violations:</strong>{" "}
+          {data.legal_compliance.compliance_summary.critical_violations_count}
+        </div>
+      </div>
+
+      {/* Law Analysis */}
+      <div className="law-analysis">
+        {data.legal_compliance.law_analysis.map((law, idx) => (
+          <div key={idx} className="law-card">
+            <h4 className="law-title">{law.law}</h4>
+            <div className={`law-status ${complianceSeverityClasses[law.compliance_status]}`}>
+              Status: {law.compliance_status.replace("_", " ")}
+            </div>
+            <div>Compliance Score: {law.compliance_score}%</div>
+            {law.recommendations.length > 0 && (
+              <div className="law-recommendations">
+                <strong>Recommendations:</strong>
+                <ul>
+                  {law.recommendations.map((rec, i) => (
+                    <li key={i}>{rec}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {law.severity && (
+              <div className={`law-severity law-${law.severity}`}>
+                Severity: {law.severity}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
+
     </div>
   );
 }

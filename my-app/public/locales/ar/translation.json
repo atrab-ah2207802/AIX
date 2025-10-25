@@ -19,5 +19,22 @@
   "yes": "نعم",
   "no": "لا",
   "add_to_calendar": "أضف إلى تقويم Google",
-  "language": "اللغة"
+  "language": "اللغة",
+    "select_country": "قانون الامتثال",
+    "select_country_placeholder": "اختر الدولة للمقارنة",
+    "country": {
+      "qatar": "قطر",
+      "uk": "المملكة المتحدة",
+      "us": "الولايات المتحدة الامريكية" 
+    },
+    "invalid_file_type": "نوع الملف غير صالح. الرجاء إرفاق PDF أو مستند Word.",
+    "file_too_large": "الملف كبير جدًا. الحد الأقصى المسموح به هو 10 ميجابايت.",
+   "export_pdf": "تصدير PDF",
+  "export_json": "تصدير JSON",
+  "generated_by": "تم الإنشاء بواسطة Contice Extraction",
+  "report": "تقرير العقد",
+  "risk_analysis": "تحليل المخاطر",
+  "extraction": "استخراج البيانات",
+  "no_file_uploaded": "لم يتم تحميل أي ملف" 
+  
 }

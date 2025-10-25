@@ -7,9 +7,17 @@ import { useTranslation } from "react-i18next";
 export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
+  const [country, setCountry] = useState(""); // New state for country
   const { t } = useTranslation();
 
   const maxSize = 10 * 1024 * 1024; // 10 MB
+
+  const countries = [
+    { code: "QATAR", label: t("country.qatar", "Qatar") },
+    { code: "UK", label: t("country.uk", "UK") },
+    { code: "US", label: t("country.us", "US") },
+  ];
+  
 
   function onChange(e) {
     setError("");
@@ -23,13 +31,13 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
     ];
 
     if (!allowedTypes.includes(f.type) && !f.name.match(/\.(pdf|doc|docx)$/i)) {
-      setError("Invalid file type. Please attach a PDF or Word document.");
+      setError(t("invalid_file_type", "Invalid file type. Please attach a PDF or Word document."));
       setFile(null);
       return;
     }
 
     if (f.size > maxSize) {
-      setError("File is too large. Maximum allowed size is 10 MB.");
+      setError(t("file_too_large", "File is too large. Maximum allowed size is 10 MB."));
       setFile(null);
       return;
     }
@@ -40,13 +48,22 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
   function clear() {
     setFile(null);
     setError("");
+    setCountry("");
+  }
+
+  function analyze() {
+    if (!file) return alert(t("no_file_selected"));
+    if (!country) return alert(t("select_country", "Please select a country for compliance analysis."));
+
+    // Example: send file and country to API
+    console.log("Uploading file:", file);
+    console.log("Selected country:", country);
   }
 
   return (
     <div className="uploader-container">
       <label className="uploader-label">{t("attach_document")}</label>
 
-      {/* Show input only if no file is uploaded */}
       {!file && (
         <input
           type="file"
@@ -64,12 +81,29 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
       {file && (
         <div className="file-card">
           <div className="file-info">
-            <p className="file-name dbt">{file.name}</p>
-            <p className="file-size dbt">
+            <p className="file-name">{file.name}</p>
+            <p className="file-size">
               {(file.size / 1024).toFixed(2)} KB • {file.type || "Unknown"}
             </p>
           </div>
-          <div className="file-actions dbt">
+
+          {/* Country Dropdown */}
+          <div className="country-selector">
+            <label htmlFor="country">{t("select_country", "Compliance Law")}</label>
+            <select
+              id="country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              className="country-dropdown"
+            >
+              <option value="">{t("select_country_placeholder", "Choose a country")}</option>
+              {countries.map((c) => (
+                <option key={c.code} value={c.code}>{c.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="file-actions">
             <button type="button" className="remove-btn" onClick={clear}>
               {t("remove")}
             </button>
@@ -80,9 +114,7 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
               whileHover={{ scale: 1.05, boxShadow: "0px 5px 15px rgba(63, 43, 100, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
-              onClick={() =>
-                alert(t("no_file_selected"))
-              }
+              onClick={analyze}
             >
               <span className="btn-title">{t("analyze")}</span>
             </motion.button>
@@ -90,10 +122,7 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
         </div>
       )}
 
-      {!file && (
-        <p className="placeholder-text">{t("no_file_selected")}
-        </p>
-      )}
+      {!file && <p className="placeholder-text">{t("no_file_selected")}</p>}
     </div>
   );
 }

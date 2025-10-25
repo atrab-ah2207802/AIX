@@ -1,10 +1,19 @@
 "use client";
-
+import "../i18n";
+import { useTranslation } from "react-i18next";
 import React, { useRef } from "react";
 import Extraction from "@/components/Extraction";
 import RiskAnalysis from "@/components/RiskAnalysis";
 
 export default function Dashboard() {
+
+
+  const { t, i18n } = useTranslation();
+  const reportRef = useRef(null);
+
+  const isRTL = i18n.language === "ar";
+
+
 
   const data1={
     "parties": [
@@ -64,10 +73,28 @@ export default function Dashboard() {
     "raw_summary": "Here's a concise summary of the Software Development Agreement:\n\n*   *Purpose:* Supplier (Corelight Technologies) will develop a responsive website and mobile application for Client (Blue Fin Consulting).\n*   *Deliverables & Key Dates:* Website and mobile application delivery by March 30, 2025. The agreement is effective January 1, 2025, expires December 31, 2025, and auto-renews annually unless canceled with 60 days' notice.\n*   *Payment:* Client pays a fixed fee of QAR 45,000 within 30 days of delivery, with 1.5% monthly interest on late payments.\n*   *Governing Law:* The agreement is governed by the laws of the State of Qatar."
   }
   const data2= {
-    "overall_score": 65,
-    "risk_level": "medium",
-    "summary": "Moderate risk: 3 deviations from company standards found",
+    "overall_score": 71,
+    "risk_level": "low",
+    "summary": "Low risk: 4 minor deviations from company standards",
     "flags": [
+      {
+        "severity": "high",
+        "category": "non_standard",
+        "title": "Significant Deviation in Limitation of Liability Clause",
+        "description": "The contract clause only caps direct damages at total fees paid, omitting the exclusion of indirect, special, incidental, consequential, punitive, or exemplary damages, and loss of profits, revenue, data, goodwill, or use. This significantly broadens potential liability.; The contract clause lacks a specific minimum cap (e.g., $100 in the standard), which could be problematic if total fees paid are very low or zero.; The contract clause fails to explicitly state that the limitations form an essential basis of the bargain and reflect an allocation of risk, which is a common and important contractual element.; The contract clause does not explicitly carve out exceptions for gross negligence, willful misconduct, or breach of confidentiality as per the company standard. It also doesn't explicitly preserve liability for death or personal injury caused by negligence, fraud, or other non-excludable liabilities.",
+        "recommendation": "The contract clause must be revised to include the standard exclusion of indirect/consequential damages, establish a minimum cap on liability (e.g., $100 or a more appropriate amount), explicitly state that these limitations are an essential basis of the bargain, and clearly carve out exceptions for gross negligence, willful misconduct, breach of confidentiality, and non-excludable liabilities such as death or personal injury caused by negligence.",
+        "clause_reference": "limitation_of_liability Section",
+        "confidence": 0.4
+      },
+      {
+        "severity": "medium",
+        "category": "non_standard",
+        "title": "Non-Standard Payment Terms",
+        "description": "",
+        "recommendation": "",
+        "clause_reference": "payment_terms Section",
+        "confidence": 1.0
+      },
       {
         "severity": "high",
         "category": "missing_clause",
@@ -76,15 +103,6 @@ export default function Dashboard() {
         "recommendation": "Add comprehensive indemnification clause matching company standards",
         "clause_reference": "indemnification Section",
         "confidence": 0.4
-      },
-      {
-        "severity": "critical",
-        "category": "non_standard",
-        "title": "Non-Standard Warranties",
-        "description": "The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifications, and non-infringement.; The company standard explicitly disclaims implied warranties of merchantability and fitness for a particular purpose, but the contract clause's \"as is\" provision is a much broader and more aggressive disclaimer that negates even basic expectations of software functionality.; The company standard provides specific remedies for breach of warranty (correction, replacement, or refund), which are entirely absent in the contract clause.",
-        "recommendation": "The contract clause significantly deviates from company standards by disclaiming all warranties. It is recommended to revise the clause to incorporate the company's standard warranty provisions, including express warranties on quality, non-infringement, and remedies for breach. At a minimum, the 'as is' clause should be removed and replaced with more balanced warranty language.",
-        "clause_reference": "warranties Section",
-        "confidence": 0.8
       },
       {
         "severity": "high",
@@ -97,11 +115,10 @@ export default function Dashboard() {
       }
     ],
     "recommendations": [
-      "Add comprehensive dispute_resolution clause matching company standards",
-      "The contract clause significantly deviates from company standards by disclaiming all warranties. It is recommended to revise the clause to incorporate the company's standard warranty provisions, including express warranties on quality, non-infringement, and remedies for breach. At a minimum, the 'as is' clause should be removed and replaced with more balanced warranty language.",
-      "Add comprehensive indemnification clause matching company standards"
+      "The contract clause must be revised to include the standard exclusion of indirect/consequential damages, establish a minimum cap on liability (e.g., $100 or a more appropriate amount), explicitly state that these limitations are an essential basis of the bargain, and clearly carve out exceptions for gross negligence, willful misconduct, breach of confidentiality, and non-excludable liabilities such as death or personal injury caused by negligence.",
+      "Add comprehensive indemnification clause matching company standards",
+      "Add comprehensive dispute_resolution clause matching company standards"
     ],
-
     "term_consistency": [
       {
         "term": "Confidential",
@@ -146,18 +163,25 @@ export default function Dashboard() {
     ],
     "clause_comparisons": [
       {
+        "clause_type": "liability",
+        "standard_version": "Company standard liability clause",
+        "contract_version": "The contract clause only caps direct damages at total fees paid, omitting the exclusion of indirect, special, incidental, consequential, punitive, or exemplary damages, and loss of profits, revenue, d...",
+        "deviation_severity": "high",
+        "explanation": "The contract clause only caps direct damages at total fees paid, omitting the exclusion of indirect, special, incidental, consequential, punitive, or exemplary damages, and loss of profits, revenue, data, goodwill, or use. This significantly broadens potential liability.; The contract clause lacks a specific minimum cap (e.g., $100 in the standard), which could be problematic if total fees paid are very low or zero.; The contract clause fails to explicitly state that the limitations form an essential basis of the bargain and reflect an allocation of risk, which is a common and important contractual element.; The contract clause does not explicitly carve out exceptions for gross negligence, willful misconduct, or breach of confidentiality as per the company standard. It also doesn't explicitly preserve liability for death or personal injury caused by negligence, fraud, or other non-excludable liabilities."
+      },
+      {
+        "clause_type": "payment",
+        "standard_version": "Company standard payment clause",
+        "contract_version": "...",
+        "deviation_severity": "medium",
+        "explanation": ""
+      },
+      {
         "clause_type": "indemnification",
         "standard_version": "Company standard indemnification clause",
         "contract_version": "Standard indemnification clause not found (appeared in 2 company contracts)...",
         "deviation_severity": "high",
         "explanation": "Standard indemnification clause not found (appeared in 2 company contracts)"
-      },
-      {
-        "clause_type": "warranties",
-        "standard_version": "Company standard warranties clause",
-        "contract_version": "The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifica...",
-        "deviation_severity": "critical",
-        "explanation": "The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifications, and non-infringement.; The company standard explicitly disclaims implied warranties of merchantability and fitness for a particular purpose, but the contract clause's \"as is\" provision is a much broader and more aggressive disclaimer that negates even basic expectations of software functionality.; The company standard provides specific remedies for breach of warranty (correction, replacement, or refund), which are entirely absent in the contract clause."
       },
       {
         "clause_type": "dispute_resolution",
@@ -169,21 +193,21 @@ export default function Dashboard() {
     ],
     "legal_advice": [
       {
+        "topic": "Significant Deviation in Limitation of Liability Clause",
+        "advice": "This clause poses significant legal risk that should be addressed. The contract clause only caps direct damages at total fees paid, omitting the exclusion of indirect, special, incidental, consequential, punitive, or exemplary damages, and loss of profits, revenue, data, goodwill, or use. This significantly broadens potential liability.; The contract clause lacks a specific minimum cap (e.g., $100 in the standard), which could be problematic if total fees paid are very low or zero.; The contract clause fails to explicitly state that the limitations form an essential basis of the bargain and reflect an allocation of risk, which is a common and important contractual element.; The contract clause does not explicitly carve out exceptions for gross negligence, willful misconduct, or breach of confidentiality as per the company standard. It also doesn't explicitly preserve liability for death or personal injury caused by negligence, fraud, or other non-excludable liabilities.",
+        "risk_level": "high",
+        "supporting_law": "General Contract Law Principles",
+        "recommendations": [
+          "The contract clause must be revised to include the standard exclusion of indirect/consequential damages, establish a minimum cap on liability (e.g., $100 or a more appropriate amount), explicitly state that these limitations are an essential basis of the bargain, and clearly carve out exceptions for gross negligence, willful misconduct, breach of confidentiality, and non-excludable liabilities such as death or personal injury caused by negligence."
+        ]
+      },
+      {
         "topic": "Missing Indemnification Clause",
         "advice": "This clause poses significant legal risk that should be addressed. Standard indemnification clause not found (appeared in 2 company contracts)",
         "risk_level": "high",
         "supporting_law": "General Contract Law Principles",
         "recommendations": [
           "Add comprehensive indemnification clause matching company standards"
-        ]
-      },
-      {
-        "topic": "Non-Standard Warranties",
-        "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause completely disclaims all warranties, whereas the company standard includes detailed express warranties regarding development quality, defect-free software, conformance to specifications, and non-infringement.; The company standard explicitly disclaims implied warranties of merchantability and fitness for a particular purpose, but the contract clause's \"as is\" provision is a much broader and more aggressive disclaimer that negates even basic expectations of software functionality.; The company standard provides specific remedies for breach of warranty (correction, replacement, or refund), which are entirely absent in the contract clause.",
-        "risk_level": "critical",
-        "supporting_law": "General Contract Law Principles",
-        "recommendations": [
-          "The contract clause significantly deviates from company standards by disclaiming all warranties. It is recommended to revise the clause to incorporate the company's standard warranty provisions, including express warranties on quality, non-infringement, and remedies for breach. At a minimum, the 'as is' clause should be removed and replaced with more balanced warranty language."
         ]
       },
       {
@@ -196,7 +220,7 @@ export default function Dashboard() {
         ]
       }
     ],
-    "analyzed_at": "2025-10-25T17:21:03.044749",
+    "analyzed_at": "2025-10-25T22:32:55.761826",
     "contract_metadata": {
       "contract_name": "analyzed_contract.docx",
       "parties": [
@@ -205,28 +229,101 @@ export default function Dashboard() {
           "role": "Client"
         },
         {
-          "name": "Vendor",
+          "name": "Vendor Inc",
           "role": "Supplier"
         }
       ],
       "effective_date": "2025-01-01",
       "expiry_date": "2025-12-31",
-      "total_value": "Value specified in payment terms",
+      "total_value": "QAR 500000",
       "extracted_clauses_count": 1
+    },
+    "legal_compliance": {
+      "contract_id": "TEST_001",
+      "jurisdiction": "QATAR",
+      "analyzed_at": "2025-10-25T22:33:19.130865",
+      "compliance_summary": {
+        "overall_compliance_score": 50,
+        "status": "non_compliant",
+        "total_laws_analyzed": 4,
+        "compliant_laws": 0,
+        "non_compliant_laws": 0,
+        "critical_violations_count": 0
+      },
+      "law_analysis": [
+        {
+          "law": "Qatar Civil Code - Contracts",
+          "compliance_status": "unknown",
+          "compliance_score": 50,
+          "specific_articles_violated": [],
+          "compliance_issues": [],
+          "legal_risks": [],
+          "recommendations": [
+            "Revise Article 4 to limit late payment interest to a maximum of 9% per annum, as mandated by Article 220 of the Qatar Civil Code.",
+            "Revise Article 8 to explicitly state that all intellectual property rights for the developed website and mobile application vest with the Client upon full payment, in accordance with the principles of Article 210.",
+            "Review Article 5 to ensure that the broad limitation of liability does not attempt to exclude or limit liability in circumstances prohibited by Article 190 (e.g., fraud, gross negligence). Consider adding carve-outs for these specific exceptions."
+          ],
+          "severity": "medium",
+          "missing_required_clauses": []
+        },
+        {
+          "law": "Qatar Commercial Companies Law",
+          "compliance_status": "unknown",
+          "compliance_score": 50,
+          "specific_articles_violated": [],
+          "compliance_issues": [],
+          "legal_risks": [],
+          "recommendations": [],
+          "severity": "medium",
+          "missing_required_clauses": []
+        },
+        {
+          "law": "Qatar Data Protection Regulations",
+          "compliance_status": "unknown",
+          "compliance_score": 50,
+          "specific_articles_violated": [],
+          "compliance_issues": [],
+          "legal_risks": [],
+          "recommendations": [],
+          "severity": "medium",
+          "missing_required_clauses": []
+        },
+        {
+          "law": "Specific Regulations",
+          "compliance_status": "unknown",
+          "compliance_score": 50,
+          "specific_articles_violated": [],
+          "compliance_issues": [],
+          "legal_risks": [],
+          "recommendations": [],
+          "severity": "medium",
+          "missing_required_clauses": []
+        }
+      ],
+      "legal_risks": [],
+      "recommendations": [
+        "Revise Article 4 to limit late payment interest to a maximum of 9% per annum, as mandated by Article 220 of the Qatar Civil Code.",
+        "Revise Article 8 to explicitly state that all intellectual property rights for the developed website and mobile application vest with the Client upon full payment, in accordance with the principles of Article 210.",
+        "Review Article 5 to ensure that the broad limitation of liability does not attempt to exclude or limit liability in circumstances prohibited by Article 190 (e.g., fraud, gross negligence). Consider adding carve-outs for these specific exceptions."
+      ],
+      "critical_violations": [],
+      "metadata": {
+        "total_laws_available": 4,
+        "total_laws_analyzed": 4,
+        "analysis_method": "Gemini AI Legal Analysis",
+        "legal_database_used": true
+      }
     }
   }
-  let data3={}
 
-const reportRef = useRef(null);
 
-  // PDF Export
+
   const exportPDF = () => {
     if (!reportRef.current) return;
-  
-    // Force all text to black
+
     const originalColor = reportRef.current.style.color;
     reportRef.current.style.color = "black";
-  
+
     const opt = {
       margin: 0.5,
       filename: `Contract_Report_${new Date().toISOString().slice(0, 10)}.pdf`,
@@ -234,9 +331,8 @@ const reportRef = useRef(null);
       html2canvas: { scale: 2 },
       jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
     };
-  
+
     html2pdf().set(opt).from(reportRef.current).save().finally(() => {
-      // Restore original color
       reportRef.current.style.color = originalColor;
     });
   };
@@ -250,24 +346,37 @@ const reportRef = useRef(null);
     link.click();
   };
 
-
-
   return (
-    
     <div className="all-data" style={{ padding: "2rem" }}>
+      {/* Export Buttons */}
       <div className="export-buttons">
-  <button onClick={exportPDF}>Export PDF</button>
-  <button onClick={exportJSON}>Export JSON</button>
-</div>
+        <button onClick={exportPDF}>{t("export_pdf")}</button>
+        <button onClick={exportJSON}>{t("export_json")}</button>
+      </div>
 
-<div className="gap"></div>
-  
-      <div  ref={reportRef} >
+
+
+
+
+
+
+
+
+
+
+
+      <div className="gap"></div>
+
+      {/* Report Content */}
+
+      <div ref={reportRef}>
         <Extraction data={data1} />
         <RiskAnalysis data={data2} />
       </div>
-      <footer className="report-footer">
-        <small>Generated by Contice Extraction</small>
+
+      {/* Footer */}
+      <footer className="report-footer" >
+        <small>{t("generated_by")}</small>
       </footer>
     </div>
   );

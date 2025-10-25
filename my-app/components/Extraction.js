@@ -52,7 +52,7 @@ function googleCalendarAllDayUrl({ title = "", details = "", startDateObj, parti
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: `${title} — ${partyString || "Contract Event"}`,
-    details: `${details}\n\n${partyString}\n\n(Added by Concice)`,
+    details: `${details}\n\n${partyString}\n\n(Added by Contice)`,
     dates: `${start}/${end}`,
   });
 
