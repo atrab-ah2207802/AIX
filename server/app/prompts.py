@@ -27,18 +27,84 @@
 
 
 # ============================= prompts.py ====================================
+# EXTRACT_JSON_PROMPT = """
+# You are an expert contract parser. Return STRICT JSON with keys:
+# parties[{name,role}], effective_date, expiry_date, renewals, governing_law,
+# obligations[{party,text}], financials[{label,amount,currency,text}], signatures_present, raw_summary (bulleted text).
+# Focus on accuracy; if missing, return null or [].
+# Text:
+# \"\"\"{TEXT}\"\"\"
+# """
+
+# """
+# Prompt templates for AI analysis
+# """
 EXTRACT_JSON_PROMPT = """
-You are an expert contract parser. Return STRICT JSON with keys:
-parties[{name,role}], effective_date, expiry_date, renewals, governing_law,
-obligations[{party,text}], financials[{label,amount,currency,text}], signatures_present, raw_summary (bulleted text).
-Focus on accuracy; if missing, return null or [].
-Text:
-\"\"\"{TEXT}\"\"\"
+You are an expert contract parser. Return ONLY valid JSON with these fields:
+{
+  "parties": [{"name": "", "role": ""}],
+  "effective_date": "",
+  "expiry_date": "",
+  "renewal_date": "",
+  "auto_renewal": true,
+  "renewals": "",
+  "governing_law": "",
+  "jurisdiction": "",
+  "obligations": [{"party": "", "text": ""}],
+  "financials": [{
+    "label": "Payment",
+    "amount": "",
+    "currency": "",
+    "schedule": "",
+    "penalties": [{"type": "", "amount": "", "rate": "", "condition": "", "text": ""}],
+    "text": ""
+  }],
+  "signatures_present": true,
+  "raw_summary": ""
+}
+
+Rules:
+- Output JSON only (no markdown or prose).
+- If a value is explicitly present in text (e.g., "QAR 45,000", "1.5% per month", "within 30 days"), DO NOT leave it null; copy the exact string.
+- Prefer extracting the responsible party for each obligation when it’s clear (“Supplier shall…”, “Client shall…”).
+- If a party line contains a role in parentheses, set role accordingly (e.g., "Corelight Technologies, Inc. (Supplier)").
+- If renewal is described (notice period, term), set `auto_renewal: true` and compress details in `renewals`.
+- Penalties: include any late fees/interest as a penalty with fields filled; at minimum set `text`.
+- Dates and amounts: keep the exact formatting from the contract.
+- If a field truly does not exist, use null or [].
+
+Examples:
+
+TEXT:
+Client shall pay QAR 45,000 within 30 days of delivery; late payments accrue 1.5% per month.
+
+JSON snippet:
+{
+  "financials": [{
+    "label": "Payment",
+    "amount": "45,000",
+    "currency": "QAR",
+    "schedule": "within 30 days",
+    "penalties": [{"type": "late/interest", "amount": null, "rate": "1.5% per month", "condition": "late payment", "text": "late payments accrue 1.5% per month"}],
+    "text": "Client shall pay QAR 45,000 within 30 days of delivery"
+  }]
+}
+
+TEXT:
+This Agreement auto-renews annually unless terminated with 60 days' prior written notice.
+
+JSON snippet:
+{
+  "auto_renewal": true,
+  "renewals": "notice_period: 60 days; term: annual"
+}
+
+Now parse this contract:
+
+\"\"\"{TEXT}\"\"\" 
 """
 
-"""
-Prompt templates for AI analysis
-"""
+
 
 RISK_ANALYSIS_PROMPT = """
 Analyze this contract for legal risks and compliance issues.

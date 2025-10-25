@@ -17,3 +17,11 @@ torch>=2.2.0
 
 # LLM clients - ADD GEMINI
 google-generativeai>=0.3.0
+
+# Bytez SDK for LLM
+bytez>=0.1.0
+
+google-genai>=0.3.0
+
+sentence-transformers>=2.7.0
+scikit-learn>=1.2.0
