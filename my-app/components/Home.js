@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import FileUploader from "./FileUploader";      
+import { useTranslation } from "react-i18next";
+import FileUploader from "./FileUploader";
 
 export default function Home() {
-  // Dynamic background movement
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const x = e.clientX / window.innerWidth;
@@ -16,34 +18,19 @@ export default function Home() {
 
   return (
     <div>
-
-      
       <div className="overlay"></div>
-
-      <header className="navbar">
-        <h1 className="logo">AI Contract Insight</h1>
-      </header>
 
       <main className="main-section">
         <div className="intro">
-          <h2>Transform How You Understand Contracts</h2>
-          <p>
-            Upload or paste your legal documents to get instant, AI-driven insights —
-            clause detection, risk assessment, and key obligation summaries.
-          </p>
-            <div className="features-list mt-90"></div>
-
-          <FileUploader></FileUploader>
+          <h2>{t("hero_title")}</h2>
+          <p>{t("hero_text")}</p>
+          <FileUploader />
         </div>
       </main>
 
       <section className="about">
-        <h3>About the Platform</h3>
-        <p>
-          This platform leverages advanced AI models to analyze legal contracts in real time.
-          It identifies crucial clauses, highlights potential risks, and summarizes obligations,
-          making complex agreements easier to understand for individuals and organizations alike.
-        </p>
+        <h3>{t("about_title")}</h3>
+        <p>{t("about_text")}</p>
       </section>
     </div>
   );

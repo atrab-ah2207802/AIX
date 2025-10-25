@@ -1,0 +1,23 @@
+{
+  "app_title": "Contice",
+  "hero_title": "Concisely extracting what matters most",
+  "hero_text": "Upload or paste your legal documents to get instant, AI-driven insights — clause detection, risk assessment, and key obligation summaries.",
+  "about_title": "About the Platform",
+  "about_text": "This platform leverages advanced AI models to analyze legal contracts in real time. It identifies crucial clauses, highlights potential risks, and summarizes obligations, making complex agreements easier to understand for individuals and organizations alike.",
+  "attach_document": "Attach Document",
+  "no_file_selected": "No file selected. Supported: .pdf, .doc, .docx. Max 10 MB.",
+  "analyze": "Analyze ✨",
+  "remove": "Remove",
+  "contract_analysis": "Contract Analysis",
+  "effective_date": "Effective Date",
+  "expiry_date": "Expiry Date",
+  "parties": "Parties",
+  "obligations": "Obligations",
+  "financials": "Financials",
+  "governing_law": "Governing Law",
+  "signatures_present": "Signatures Present",
+  "yes": "Yes",
+  "no": "No",
+  "add_to_calendar": "Add to Google Calendar",
+  "language": "Language"
+}

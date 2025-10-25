@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
+  const { t } = useTranslation();
 
   const maxSize = 10 * 1024 * 1024; // 10 MB
 
@@ -42,7 +44,7 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
 
   return (
     <div className="uploader-container">
-      <label className="uploader-label">Attach Document</label>
+      <label className="uploader-label">{t("attach_document")}</label>
 
       {/* Show input only if no file is uploaded */}
       {!file && (
@@ -69,7 +71,7 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
           </div>
           <div className="file-actions dbt">
             <button type="button" className="remove-btn" onClick={clear}>
-              Remove
+              {t("remove")}
             </button>
 
             <motion.button
@@ -79,18 +81,17 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
               onClick={() =>
-                alert("No backend attached. Implement API to upload the file.")
+                alert(t("no_file_selected"))
               }
             >
-              <span className="btn-title">Analyze ✨</span>
+              <span className="btn-title">{t("analyze")}</span>
             </motion.button>
           </div>
         </div>
       )}
 
       {!file && (
-        <p className="placeholder-text">
-          No file selected. Supported: .pdf, .doc, .docx. Max 10 MB.
+        <p className="placeholder-text">{t("no_file_selected")}
         </p>
       )}
     </div>
