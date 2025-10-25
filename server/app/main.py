@@ -82,7 +82,7 @@ app = FastAPI(title="AIX CLM Backend — Upload/OCR/Extraction")
 
 @app.get("/", include_in_schema=False)
 def root():
-    return {"ok": True, "service": "AIX CLM Backend", "endpoints": ["/api/health", "/api/upload", "/api/extract", "/api/risk"]}
+    return {"ok": True, "service": "AIX CLM Backend", "endpoints": ["/api/health", "/api/upload", "/api/extract"]}
 
 # CORS — adjust origins for your React dev server
 app.add_middleware(
@@ -249,7 +249,7 @@ async def api_qa_debug(req: QARequest):
     return QADebugAnswer(answer=answer, sources=sources, prompt=prompt, model_name=os.getenv("GEMINI_QA_MODEL","gemini-2.0-flash"))
 
 
-# # KEEP BOTH VERSIONS FOR COMPATIBILITY
+# # I MADE A SEPERATE SERVER FOR RISK CZ ERRORS WERE OCCURING
 # @app.post("/api/risk", response_model=RiskSummary)
 # async def api_risk(body: dict):  # ← KEEP your colleague's parameter style
 #     """Run comprehensive risk analysis - compatible with both styles"""

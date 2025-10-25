@@ -1,0 +1,135 @@
+{
+  "overall_score": 60,
+  "risk_level": "high",
+  "summary": "Analysis completed with 10 risks identified",
+  "flags": [
+    {
+      "severity": "critical",
+      "category": "liability",
+      "title": "Unlimited Liability Exposure",
+      "description": "The contract does not contain any clause limiting the extent of damages that either party can claim from the other. This could expose QDB to unlimited financial exposure in case of a breach by Vendor Inc.",
+      "recommendation": "Incorporate a Limitation of Liability clause that caps the total liability of each party, ideally to the value of the contract or a mutually agreed-upon sum, with carve-outs for gross negligence, willful misconduct, and confidentiality breaches.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.95
+    },
+    {
+      "severity": "critical",
+      "category": "ip_ownership",
+      "title": "Intellectual Property Ownership Unclear",
+      "description": "The contract does not specify who owns the intellectual property (IP) developed or utilized during the performance of the services. For QDB to benefit fully, it should own the deliverables.",
+      "recommendation": "Add an IP Ownership clause clearly stating that all intellectual property rights, including copyrights, patents, and trademarks, in any deliverables created by Vendor Inc. under this agreement shall belong exclusively to QDB.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.95
+    },
+    {
+      "severity": "critical",
+      "category": "missing_clause",
+      "title": "Missing Indemnification Clause",
+      "description": "The agreement lacks an indemnification clause, which would typically require one party to compensate the other for specific losses or damages, such as third-party claims arising from the indemnifying party's actions or omissions.",
+      "recommendation": "Include an indemnification clause where Vendor Inc. agrees to indemnify and hold harmless QDB against any claims, damages, losses, liabilities, and expenses arising from Vendor Inc.'s breach of contract, negligence, or infringement of third-party rights.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.95
+    },
+    {
+      "severity": "high",
+      "category": "missing_clause",
+      "title": "Missing Confidentiality/Non-Disclosure Clause",
+      "description": "There is no clause obligating either party to keep sensitive information exchanged during the contract term confidential. This poses a risk of unauthorized disclosure of proprietary business information.",
+      "recommendation": "Insert a comprehensive Confidentiality or Non-Disclosure Agreement (NDA) clause that defines confidential information, outlines the obligations of both parties to protect it, and specifies the duration of the confidentiality obligation.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.85
+    },
+    {
+      "severity": "high",
+      "category": "missing_clause",
+      "title": "Missing Termination Rights Clause",
+      "description": "The contract does not define conditions under which either party can terminate the agreement before its expiration date, nor does it outline the procedures for termination.",
+      "recommendation": "Include a Termination clause detailing grounds for termination (e.g., material breach, insolvency), notice periods required, and consequences of termination for both parties.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.85
+    },
+    {
+      "severity": "high",
+      "category": "missing_clause",
+      "title": "Missing Dispute Resolution Clause",
+      "description": "The absence of a dispute resolution mechanism means that any disagreements will likely default to potentially lengthy and costly litigation without predefined procedures for negotiation, mediation, or arbitration.",
+      "recommendation": "Add a Dispute Resolution clause specifying the preferred method for resolving disputes, such as negotiation, mediation, or arbitration, and potentially the jurisdiction for any legal proceedings not resolved by these methods.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.85
+    },
+    {
+      "severity": "high",
+      "category": "missing_clause",
+      "title": "Missing Force Majeure Clause",
+      "description": "The agreement does not address 'force majeure' events (unforeseeable circumstances beyond a party's control) that could prevent performance, leaving parties liable for non-performance due to events outside their control.",
+      "recommendation": "Incorporate a Force Majeure clause that excuses non-performance due to specific events (e.g., natural disasters, war, pandemics) and outlines the notification procedures and remedies.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.85
+    },
+    {
+      "severity": "medium",
+      "category": "payment_terms",
+      "title": "Payment Terms Risk: Long Net 60",
+      "description": "While not excessively long, a Net 60 payment term means QDB has significant cash outflow before receiving services completion, and Vendor Inc. has a considerable wait for payment.",
+      "recommendation": "Evaluate if Net 60 days from invoice date is financially manageable for QDB. Consider negotiating earlier payment milestones for partial deliverables or a discount for early payment to improve cash flow.",
+      "clause_reference": "PAYMENT TERMS",
+      "confidence": 0.75
+    },
+    {
+      "severity": "medium",
+      "category": "vague_obligations",
+      "title": "Vague Service Deliverables",
+      "description": "The phrase 'completion of services' is vague. The contract does not specify what constitutes 'completion' or the exact scope of services to be rendered by Vendor Inc.",
+      "recommendation": "Define 'services' and 'completion' explicitly. Attach a Statement of Work (SOW) or detailed Scope of Services as an exhibit to the agreement, outlining specific deliverables, timelines, and acceptance criteria.",
+      "clause_reference": "PAYMENT TERMS, SERVICE DESCRIPTION (Implied)",
+      "confidence": 0.75
+    },
+    {
+      "severity": "low",
+      "category": "jurisdiction_compliance",
+      "title": "Governing Law Match with Target Jurisdiction",
+      "description": "The governing law is stated as 'laws of Qatar', which aligns with the target jurisdiction of QATAR. This is compliant.",
+      "recommendation": "No action needed, this is compliant.",
+      "clause_reference": "GOVERNING LAW",
+      "confidence": 0.65
+    }
+  ],
+  "recommendations": [
+    "Insert a comprehensive Confidentiality or Non-Disclosure Agreement (NDA) clause that defines confidential information, outlines the obligations of both parties to protect it, and specifies the duration of the confidentiality obligation.",
+    "Add a Dispute Resolution clause specifying the preferred method for resolving disputes, such as negotiation, mediation, or arbitration, and potentially the jurisdiction for any legal proceedings not resolved by these methods.",
+    "Define 'services' and 'completion' explicitly. Attach a Statement of Work (SOW) or detailed Scope of Services as an exhibit to the agreement, outlining specific deliverables, timelines, and acceptance criteria.",
+    "Incorporate a Limitation of Liability clause that caps the total liability of each party, ideally to the value of the contract or a mutually agreed-upon sum, with carve-outs for gross negligence, willful misconduct, and confidentiality breaches.",
+    "Incorporate a Force Majeure clause that excuses non-performance due to specific events (e.g., natural disasters, war, pandemics) and outlines the notification procedures and remedies.",
+    "Evaluate if Net 60 days from invoice date is financially manageable for QDB. Consider negotiating earlier payment milestones for partial deliverables or a discount for early payment to improve cash flow.",
+    "Include an indemnification clause where Vendor Inc. agrees to indemnify and hold harmless QDB against any claims, damages, losses, liabilities, and expenses arising from Vendor Inc.'s breach of contract, negligence, or infringement of third-party rights.",
+    "No action needed, this is compliant.",
+    "Include a Termination clause detailing grounds for termination (e.g., material breach, insolvency), notice periods required, and consequences of termination for both parties.",
+    "Add an IP Ownership clause clearly stating that all intellectual property rights, including copyrights, patents, and trademarks, in any deliverables created by Vendor Inc. under this agreement shall belong exclusively to QDB."
+  ],
+  "analyzed_at": "2025-10-26T00:46:08.311414",
+  "contract_metadata": {
+    "contract_name": "analyzed_contract.docx",
+    "parties": [
+      {
+        "name": "QDB",
+        "role": "Client"
+      },
+      {
+        "name": "Vendor Inc",
+        "role": "Supplier"
+      }
+    ],
+    "effective_date": "2025-01-01",
+    "expiry_date": "2025-12-31",
+    "total_value": "QAR 500000",
+    "extracted_clauses_count": 5
+  },
+  "legal_compliance": {
+    "analyzed": false,
+    "jurisdiction": "N/A",
+    "compliance_summary": {
+      "overall_compliance_score": 0,
+      "status": "not_analyzed"
+    }
+  }
+}
