@@ -1,0 +1,9 @@
+SECTION 90: Promise Reasonably Inducing Action or Forbearance - A promise which the promisor should reasonably expect to induce action or forbearance on the part of the promisee and which does induce such action or forbearance is binding if injustice can be avoided only by enforcement of the promise.
+
+SECTION 205: Duty of Good Faith and Fair Dealing - Every contract imposes upon each party a duty of good faith and fair dealing in its performance and its enforcement.
+
+SECTION 208: Unconscionable Contract or Term - If a contract or term thereof is unconscionable at the time the contract is made, a court may refuse to enforce the contract, or may enforce the remainder of the contract without the unconscionable term.
+
+SECTION 356: Liquidated Damages and Penalties - Damages for breach by either party may be liquidated in the agreement but only at an amount that is reasonable in the light of the anticipated or actual harm caused by the breach.
+
+SECTION 359: Adequacy of Damages - Specific performance or an injunction will not be ordered if damages would be adequate to protect the expectation interest of the injured party.

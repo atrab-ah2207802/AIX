@@ -1,0 +1,5 @@
+UCC § 2-315: Implied Warranty of Fitness for Particular Purpose - Where the seller at the time of contracting has reason to know any particular purpose for which the goods are required and that the buyer is relying on the seller's skill or judgment to select or furnish suitable goods, there is an implied warranty that the goods shall be fit for such purpose.
+
+UCC § 2-316: Exclusion or Modification of Warranties - To exclude or modify the implied warranty of merchantability, the language must mention merchantability and be conspicuous. To exclude the implied warranty of fitness, the exclusion must be in writing and conspicuous.
+
+UCC § 2-719: Contractual Modification or Limitation of Remedy - May provide for remedies in addition to or in substitution for those provided in this Article and may limit or alter the measure of damages recoverable. However, limitation of consequential damages for injury to the person in the case of consumer goods is prima facie unconscionable.

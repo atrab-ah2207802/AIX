@@ -1,0 +1,283 @@
+{
+  "overall_score": 10,
+  "risk_level": "critical",
+  "summary": "Critical risk: 7 critical company standard violations requiring immediate attention",
+  "flags": [
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Missing Termination Clause",
+      "description": "Contract clause for termination is missing.",
+      "recommendation": "The termination clause is a fundamental part of any contract. Its absence creates significant legal and business risk, as it leaves the parties without a clear framework for ending the agreement. This needs to be added immediately.",
+      "clause_reference": "termination Section",
+      "confidence": 1.0
+    },
+    {
+      "severity": "high",
+      "category": "non_standard",
+      "title": "Significant deviation in payment terms and pricing model",
+      "description": "The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices will be issued or delivered.; The contract clause uses a cost-plus or fair market value approach for charging services, which is fundamentally different from the standard net 30 payment terms.",
+      "recommendation": "The contract clause significantly deviates from company standards. It lacks essential payment terms such as due dates and late fees, and proposes a different pricing model (cost-plus/fair market value) instead of standard payment terms. This clause should be renegotiated to align with the company standard payment terms, including specifying invoice issuance, payment due dates, and late fee provisions.",
+      "clause_reference": "payment_terms Section",
+      "confidence": 1.0
+    },
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Missing Indemnification Clause",
+      "description": "Indemnification clause is completely missing from the contract.",
+      "recommendation": "The indemnification clause is a critical component of risk allocation in a contract. Its absence creates significant legal and business risk for the company. This clause must be added to the contract and should align with the company standard clause provided.",
+      "clause_reference": "indemnification Section",
+      "confidence": 0.4
+    },
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Missing Confidentiality Clause",
+      "description": "The contract clause for confidentiality is missing entirely (null value provided).",
+      "recommendation": "The confidentiality clause must be inserted into the contract to protect sensitive information. A clause similar to the company standard should be used, ensuring clear definitions of confidential information, obligations of the receiving party, and exclusions from confidentiality.",
+      "clause_reference": "confidentiality Section",
+      "confidence": 0.8
+    },
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Missing Intellectual Property Clause",
+      "description": "The contract clause is missing entirely, which represents a critical gap in intellectual property protection.",
+      "recommendation": "The contract clause for intellectual property is entirely absent. This is a critical omission. The company standard clause, which assigns all intellectual property developed during the performance of services to the company, must be included in the contract.",
+      "clause_reference": "intellectual_property Section",
+      "confidence": 0.6
+    },
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Absence of Warranty Clause",
+      "description": "The contract clause for warranties is null, meaning no warranties are included in the contract. This is a significant deviation from the company standard, which includes express warranties for workmanship, materials, and substantial performance in accordance with documentation.",
+      "recommendation": "The contract must include a warranty clause that aligns with the company standard. Specifically, it should warrant that the Product/Service provided will be free from defects in workmanship and materials for a period of ninety (90) days from the Effective Date and will perform substantially in accordance with the Documentation during such warranty period.",
+      "clause_reference": "warranties Section",
+      "confidence": 0.8
+    },
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Missing Dispute Resolution Clause",
+      "description": "Contract clause for dispute resolution is missing entirely.",
+      "recommendation": "The contract clause for dispute resolution is completely absent. This creates significant legal risk. The company standard clause, which includes negotiation, mediation, and binding arbitration, should be incorporated into the contract immediately.",
+      "clause_reference": "dispute_resolution Section",
+      "confidence": 0.6
+    },
+    {
+      "severity": "critical",
+      "category": "non_standard",
+      "title": "Missing Qatari Specific Clause",
+      "description": "The contract clause \"qatar_specific_clauses\" is missing, while the company standard requires specific clauses related to Qatari law and jurisdiction.",
+      "recommendation": "Insert the company standard Qatari specific clause, ensuring the specific law number and year are filled in. This clause is critical for governing disputes and ensuring contractual terms are interpreted in accordance with Qatari law.",
+      "clause_reference": "qatar_specific_clauses Section",
+      "confidence": 0.7
+    }
+  ],
+  "recommendations": [
+    "Insert the company standard Qatari specific clause, ensuring the specific law number and year are filled in. This clause is critical for governing disputes and ensuring contractual terms are interpreted in accordance with Qatari law.",
+    "The termination clause is a fundamental part of any contract. Its absence creates significant legal and business risk, as it leaves the parties without a clear framework for ending the agreement. This needs to be added immediately.",
+    "The contract clause for intellectual property is entirely absent. This is a critical omission. The company standard clause, which assigns all intellectual property developed during the performance of services to the company, must be included in the contract.",
+    "The confidentiality clause must be inserted into the contract to protect sensitive information. A clause similar to the company standard should be used, ensuring clear definitions of confidential information, obligations of the receiving party, and exclusions from confidentiality.",
+    "The contract clause significantly deviates from company standards. It lacks essential payment terms such as due dates and late fees, and proposes a different pricing model (cost-plus/fair market value) instead of standard payment terms. This clause should be renegotiated to align with the company standard payment terms, including specifying invoice issuance, payment due dates, and late fee provisions.",
+    "The contract clause for dispute resolution is completely absent. This creates significant legal risk. The company standard clause, which includes negotiation, mediation, and binding arbitration, should be incorporated into the contract immediately.",
+    "The indemnification clause is a critical component of risk allocation in a contract. Its absence creates significant legal and business risk for the company. This clause must be added to the contract and should align with the company standard clause provided.",
+    "The contract must include a warranty clause that aligns with the company standard. Specifically, it should warrant that the Product/Service provided will be free from defects in workmanship and materials for a period of ninety (90) days from the Effective Date and will perform substantially in accordance with the Documentation during such warranty period."
+  ],
+  "term_consistency": [
+    {
+      "term": "Confidential Information",
+      "definitions": [
+        "information that should be kept private"
+      ],
+      "is_consistent": false,
+      "issue_description": "Term not clearly defined in contract"
+    }
+  ],
+  "clause_comparisons": [
+    {
+      "clause_type": "termination",
+      "standard_version": "Company standard termination clause",
+      "contract_version": "Contract clause for termination is missing....",
+      "deviation_severity": "critical",
+      "explanation": "Contract clause for termination is missing."
+    },
+    {
+      "clause_type": "payment",
+      "standard_version": "Company standard payment clause",
+      "contract_version": "The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices...",
+      "deviation_severity": "high",
+      "explanation": "The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices will be issued or delivered.; The contract clause uses a cost-plus or fair market value approach for charging services, which is fundamentally different from the standard net 30 payment terms."
+    },
+    {
+      "clause_type": "indemnification",
+      "standard_version": "Company standard indemnification clause",
+      "contract_version": "Indemnification clause is completely missing from the contract....",
+      "deviation_severity": "critical",
+      "explanation": "Indemnification clause is completely missing from the contract."
+    },
+    {
+      "clause_type": "confidentiality",
+      "standard_version": "Company standard confidentiality clause",
+      "contract_version": "The contract clause for confidentiality is missing entirely (null value provided)....",
+      "deviation_severity": "critical",
+      "explanation": "The contract clause for confidentiality is missing entirely (null value provided)."
+    },
+    {
+      "clause_type": "intellectual_property",
+      "standard_version": "Company standard intellectual_property clause",
+      "contract_version": "The contract clause is missing entirely, which represents a critical gap in intellectual property protection....",
+      "deviation_severity": "critical",
+      "explanation": "The contract clause is missing entirely, which represents a critical gap in intellectual property protection."
+    },
+    {
+      "clause_type": "warranties",
+      "standard_version": "Company standard warranties clause",
+      "contract_version": "The contract clause for warranties is null, meaning no warranties are included in the contract. This is a significant deviation from the company standard, which includes express warranties for workman...",
+      "deviation_severity": "critical",
+      "explanation": "The contract clause for warranties is null, meaning no warranties are included in the contract. This is a significant deviation from the company standard, which includes express warranties for workmanship, materials, and substantial performance in accordance with documentation."
+    },
+    {
+      "clause_type": "dispute_resolution",
+      "standard_version": "Company standard dispute_resolution clause",
+      "contract_version": "Contract clause for dispute resolution is missing entirely....",
+      "deviation_severity": "critical",
+      "explanation": "Contract clause for dispute resolution is missing entirely."
+    }
+  ],
+  "legal_advice": [
+    {
+      "topic": "Missing Termination Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. Contract clause for termination is missing.",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "The termination clause is a fundamental part of any contract. Its absence creates significant legal and business risk, as it leaves the parties without a clear framework for ending the agreement. This needs to be added immediately."
+      ]
+    },
+    {
+      "topic": "Significant deviation in payment terms and pricing model",
+      "advice": "This clause poses significant legal risk that should be addressed. The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices will be issued or delivered.; The contract clause uses a cost-plus or fair market value approach for charging services, which is fundamentally different from the standard net 30 payment terms.",
+      "risk_level": "high",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "The contract clause significantly deviates from company standards. It lacks essential payment terms such as due dates and late fees, and proposes a different pricing model (cost-plus/fair market value) instead of standard payment terms. This clause should be renegotiated to align with the company standard payment terms, including specifying invoice issuance, payment due dates, and late fee provisions."
+      ]
+    },
+    {
+      "topic": "Missing Indemnification Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. Indemnification clause is completely missing from the contract.",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "The indemnification clause is a critical component of risk allocation in a contract. Its absence creates significant legal and business risk for the company. This clause must be added to the contract and should align with the company standard clause provided."
+      ]
+    },
+    {
+      "topic": "Missing Confidentiality Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause for confidentiality is missing entirely (null value provided).",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "The confidentiality clause must be inserted into the contract to protect sensitive information. A clause similar to the company standard should be used, ensuring clear definitions of confidential information, obligations of the receiving party, and exclusions from confidentiality."
+      ]
+    },
+    {
+      "topic": "Missing Intellectual Property Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause is missing entirely, which represents a critical gap in intellectual property protection.",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "The contract clause for intellectual property is entirely absent. This is a critical omission. The company standard clause, which assigns all intellectual property developed during the performance of services to the company, must be included in the contract."
+      ]
+    }
+  ],
+  "analyzed_at": "2025-10-25T23:37:43.689397",
+  "contract_metadata": {
+    "contract_name": "analyzed_contract.docx",
+    "parties": [
+      {
+        "name": "QDB",
+        "role": "Client"
+      },
+      {
+        "name": "Vendor Inc",
+        "role": "Supplier"
+      }
+    ],
+    "effective_date": "2025-01-01",
+    "expiry_date": "2025-12-31",
+    "total_value": "QAR 500000",
+    "extracted_clauses_count": 1
+  },
+  "legal_compliance": {
+    "contract_id": "TEST_001",
+    "jurisdiction": "QATAR",
+    "analyzed_at": "2025-10-25T23:38:01.066541",
+    "compliance_summary": {
+      "overall_compliance_score": 50,
+      "status": "non_compliant",
+      "total_laws_analyzed": 4,
+      "compliant_laws": 0,
+      "non_compliant_laws": 0,
+      "critical_violations_count": 0
+    },
+    "law_analysis": [
+      {
+        "law": "Qatar Civil Code - Contracts",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      },
+      {
+        "law": "Qatar Commercial Companies Law",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      },
+      {
+        "law": "Qatar Data Protection Regulations",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      },
+      {
+        "law": "Specific Regulations",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      }
+    ],
+    "legal_risks": [],
+    "recommendations": [],
+    "critical_violations": [],
+    "metadata": {
+      "total_laws_available": 4,
+      "total_laws_analyzed": 4,
+      "analysis_method": "Gemini AI Legal Analysis",
+      "legal_database_used": true
+    }
+  }
+}

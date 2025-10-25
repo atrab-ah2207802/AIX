@@ -1,0 +1,151 @@
+{
+  "learned_templates": {
+    "limitation_of_liability": {
+      "standard": {
+        "english": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL QDB, ITS AFFILIATES, OR THEIR RESPECTIVE OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, LICENSORS, OR SUPPLIERS (COLLECTIVELY, \"QDB PARTIES\") BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO THE SERVICES PROVIDED HEREUNDER, THE SOFTWARE, OR THE INABILITY TO USE THE SERVICES OR SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND EVEN IF A REMEDY FAILS OF ITS ESSENTIAL PURPOSE.  IN NO EVENT SHALL THE TOTAL AGGREGATE LIABILITY OF THE QDB PARTIES TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR ANY SERVICES PROVIDED HEREUNDER EXCEED THE GREATER OF (A) THE AMOUNT YOU ACTUALLY PAID TO QDB FOR THE SERVICES IN THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE LIABILITY, OR (B) ONE HUNDRED UNITED STATES DOLLARS ($100.00 USD), WHICHEVER IS GREATER.  THIS LIMITATION OF LIABILITY SHALL APPLY NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.  SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF CERTAIN LIABILITIES, SO SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.",
+        "arabic": "إلى أقصى حد يسمح به القانون المعمول به، لا تتحمل QDB أو الشركات التابعة لها أو مسؤوليها أو مديريها أو موظفيها أو وكلائها أو مرخصيها أو مورديها (مجتمعين، \"أطراف QDB\") بأي حال من الأحوال المسؤولية عن أي أضرار غير مباشرة أو عقابية أو عرضية أو خاصة أو تبعية أو exemplary، بما في ذلك على سبيل المثال لا الحصر، الأضرار الناجمة عن فقدان الأرباح أو السمعة التجارية أو الاستخدام أو البيانات أو الخسائر غير الملموسة الأخرى، الناشئة عن أو المتعلقة بالخدمات المقدمة بموجب هذا الاتفاق، أو البرمجيات، أو عدم القدرة على استخدام الخدمات أو البرمجيات، حتى لو تم الإبلاغ عن إمكانية حدوث مثل هذه الأضرار وحتى إذا فشل العلاج في تحقيق غرضه الأساسي. لا تتحمل أطراف QDB بأي حال من الأحوال المسؤولية الإجمالية التراكمية تجاهك عن جميع المطالبات الناشئة عن أو المتعلقة بهذه الشروط أو أي خدمات مقدمة بموجب هذا الاتفاق التي تتجاوز الأكبر من (أ) المبلغ الذي دفعته فعليًا لـ QDB مقابل الخدمات خلال فترة الإثني عشر (12) شهرًا التي تسبق الحدث الذي أدى إلى المسؤولية، أو (ب) مائة دولار أمريكي (100.00 دولار أمريكي)، أيهما أكبر. ينطبق هذا الحد من المسؤولية بغض النظر عن فشل الغرض الأساسي لأي علاج محدود. لا تسمح بعض الولايات القضائية باستثناء أو تحديد مسؤوليات معينة، لذلك قد لا تنطبق بعض القيود المذكورة أعلاه عليك."
+      },
+      "sample_count": 2,
+      "confidence": 0.4,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "termination": {
+      "standard": {
+        "english": "This clause outlines the conditions under which the agreement can be terminated by either party, including provisions for termination for cause and for convenience, as well as the consequences of termination.",
+        "arabic": "يحدد هذا البند الشروط التي يمكن بموجبها إنهاء الاتفاق من قبل أي من الطرفين، بما في ذلك أحكام الإنهاء بسبب المخالفة والإنهاء للراحة، بالإضافة إلى عواقب الإنهاء."
+      },
+      "sample_count": 5,
+      "confidence": 1.0,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "payment_terms": {
+      "standard": {
+        "english": "The following payment terms shall apply to all services rendered and goods provided by QDB Company (hereinafter referred to as \"QDB\"). QDB shall issue invoices to the Client electronically via email. Payment is due net thirty (30) days from the invoice date. A late fee of 1.5% per month, or the maximum rate permitted by law, whichever is lower, may be applied for overdue payments.",
+        "arabic": "تطبق شروط الدفع التالية على جميع الخدمات المقدمة والسلع المقدمة من شركة QDB (يشار إليها فيما بعد باسم \"QDB\"). تصدر QDB الفواتير للعميل إلكترونيًا عبر البريد الإلكتروني. يستحق الدفع خلال ثلاثين (30) يومًا من تاريخ الفاتورة. قد يتم تطبيق رسوم تأخير بنسبة 1.5٪ شهريًا، أو أقصى سعر مسموح به بموجب القانون، أيهما أقل، على المدفوعات المتأخرة."
+      },
+      "sample_count": 5,
+      "confidence": 1.0,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "indemnification": {
+      "standard": {
+        "english": "The Indemnifying Party shall defend, indemnify, and hold harmless the Indemnified Party, its Affiliates, and their respective officers, directors, employees, agents, and representatives from and against any and all claims, demands, actions, causes of action, liabilities, damages, losses, costs, and expenses (including, without limitation, reasonable attorneys' fees and costs) arising out of or relating to any breach of any representation, warranty, covenant, or obligation of the Indemnifying Party under this Agreement.",
+        "arabic": "يتعهد الطرف الموجب بالدفاع والتعويض وإبراء ذمة الطرف المستفيد وشركاته التابعة ومسؤوليهم ومديريهم وموظفيهم ووكلائهم وممثليهم من وعن أي ومطالبات ومطالب ودعاوى وأسباب دعوى ومسؤوليات وأضرار وخسائر وتكاليف ومصروفات (بما في ذلك، على سبيل المثال لا الحصر، أتعاب المحاماة المعقولة والتكاليف) الناشئة عن أو المتعلقة بأي خرق لأي تمثيل أو ضمان أو عهد أو التزام من قبل الطرف الموجب بموجب هذا الاتفاق."
+      },
+      "sample_count": 2,
+      "confidence": 0.4,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "confidentiality": {
+      "standard": {
+        "english": "For purposes of this Agreement, \"Confidential Information\" shall mean all non-public information, whether tangible or intangible and in whatever form or medium, disclosed by either party (the \"Disclosing Party\") to the other party (the \"Receiving Party\") that is either designated as confidential or proprietary, or that a reasonable person would understand to be confidential or proprietary given the nature of the information and the circumstances of its disclosure.",
+        "arabic": "لأغراض هذا الاتفاق، تعني \"المعلومات السرية\" جميع المعلومات غير العامة، سواء كانت ملموسة أو غير ملموسة وبأي شكل أو وسيط، التي يكشف عنها أي طرف (\"الطرف المُفصح\") للطرف الآخر (\"الطرف المتلقي\") والتي إما يتم تحديدها على أنها سرية أو مملوكة، أو التي سيفهم الشخص المعقول أنها سرية أو مملوكة نظرًا لطبيعة المعلومات وظروف الكشف عنها."
+      },
+      "sample_count": 4,
+      "confidence": 0.8,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "intellectual_property": {
+      "standard": {
+        "english": "All intellectual property, including but not limited to inventions, discoveries, designs, code, algorithms, data, documentation, and all other deliverables created or developed by the Developer in the performance of the services under this Agreement, whether solely or jointly with the Company, shall be and remain the sole and exclusive property of the Company.",
+        "arabic": "جميع حقوق الملكية الفكرية، بما في ذلك على سبيل المثال لا الحصر، الاختراعات والاكتشافات والتصاميم والكود والخوارزميات والبيانات والوثائق وجميع المخرجات الأخرى التي يتم إنشاؤها أو تطويرها من قبل المطور في أداء الخدمات بموجب هذا الاتفاق، سواء بشكل منفرد أو مشترك مع الشركة، تكون وتبقى ملكًا حصريًا للشركة."
+      },
+      "sample_count": 3,
+      "confidence": 0.6,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "warranties": {
+      "standard": {
+        "english": "QDB warrants that the Product/Service provided hereunder will be free from defects in workmanship and materials for a period of ninety (90) days from the Effective Date. QDB further warrants that the Product/Service will perform substantially in accordance with the Documentation during such warranty period.",
+        "arabic": "تضمن QDB أن المنتج/الخدمة المقدمة بموجب هذا الاتفاق ستكون خالية من العيوب في الصناعة والمواد لمدة تسعين (90) يومًا من تاريخ السريان. تضمن QDB كذلك أن المنتج/الخدمة سيعمل بشكل أساسي وفقًا للوثائق خلال فترة الضمان هذه."
+      },
+      "sample_count": 4,
+      "confidence": 0.8,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "dispute_resolution": {
+      "standard": {
+        "english": "The parties shall first attempt to resolve any dispute amicably through direct, good-faith negotiations. If the dispute cannot be resolved through informal negotiation within thirty (30) days, the parties agree to submit the dispute to mediation. If mediation fails, the dispute shall be finally settled by binding arbitration.",
+        "arabic": "يحاول الطرفان أولاً حل أي نزاع بطريقة ودية من خلال مفاوضات مباشرة بحسن نية. إذا لم يتمكن الطرفان من حل النزاع من خلال التفاوض غير الرسمي خلال ثلاثين (30) يومًا، يوافق الطرفان على إحالة النزاع إلى الوساطة. إذا فشلت الوساطة، يتم تسوية النزاع نهائيًا عن طريق التحكيم الملزم."
+      },
+      "sample_count": 3,
+      "confidence": 0.6,
+      "llm_enhanced": true,
+      "jurisdiction": "international"
+    },
+    "governing_law": {
+      "standard": {
+        "english": "This Agreement and any disputes or claims arising out of or in connection with it, its subject matter or formation shall be governed by and construed in accordance with the laws of the State of Qatar.",
+        "arabic": "يخضع هذا الاتفاق وأي نزاعات أو مطالبات تنشأ عنه أو فيما يتعلق به أو بموضوعه أو تكوينه لقوانين دولة قطر وتفسر وفقًا لها."
+      },
+      "sample_count": 1,
+      "confidence": 0.2,
+      "llm_enhanced": true,
+      "jurisdiction": "qatar"
+    },
+    "qatar_specific_clauses": {
+      "standard": {
+        "english": "In accordance with Qatari Law No. ( ) of 2024, the parties agree that any disputes shall be subject to the exclusive jurisdiction of the Qatari courts. All contractual terms shall be interpreted in a manner consistent with the provisions of the Qatari Civil Code.",
+        "arabic": "وفقًا للقانون القطري رقم ( ) لسنة 2024، يوافق الطرفان على أن أي نزاعات تخضع للاختصاص الحصري للمحاكم القطرية. يتم تفسير جميع الشروط التعاقدية بطريقة تتفق مع أحكام القانون المدني القطري."
+      },
+      "sample_count": 2,
+      "confidence": 0.7,
+      "llm_enhanced": true,
+      "jurisdiction": "qatar"
+    }
+  },
+  "language_support": {
+    "primary_language": "english",
+    "supported_languages": ["english", "arabic"],
+    "rtl_support": true,
+    "arabic_specific": {
+      "font_requirements": "Supports Arabic Unicode fonts",
+      "text_direction": "right-to-left",
+      "date_format": "Hijri/Gregorian support",
+      "number_format": "Arabic and Western numerals"
+    }
+  },
+  "jurisdiction_templates": {
+    "qatar": {
+      "governing_law": "قوانين دولة قطر",
+      "dispute_resolution": "المحاكم القطرية",
+      "interest_rates": "According to Qatar Central Bank regulations",
+      "specific_requirements": ["Commercial Company Law compliance", "QFC regulations where applicable", "Data Privacy Law compliance"]
+    },
+    "uae": {
+      "governing_law": "قوانين دولة الإمارات العربية المتحدة",
+      "dispute_resolution": "محاكم دبي أو DIFC",
+      "interest_rates": "According to UAE Central Bank",
+      "specific_requirements": ["UAE Commercial Transactions Law", "DIFC laws for DIFC entities"]
+    },
+    "saudi_arabia": {
+      "governing_law": "النظام السعودي",
+      "dispute_resolution": "اللجان القضائية في المملكة العربية السعودية",
+      "interest_rates": "According to SAMA regulations",
+      "specific_requirements": ["Saudi Companies Law", "Anti-Commercial Concealment Law"]
+    }
+  },
+  "metadata": {
+    "total_clauses_learned": 10,
+    "total_languages_supported": 2,
+    "jurisdictions_covered": 4,
+    "generated_at": "2025-10-25T23:19:56.374493",
+    "version": "2.0",
+    "bilingual_support": true,
+    "last_updated": "2025-10-25T23:19:56.374493"
+  },
+  "analysis_capabilities": {
+    "bilingual_analysis": true,
+    "language_detection": true,
+    "cross_language_comparison": true,
+    "rtl_layout_support": true,
+    "mixed_language_documents": true
+  }
+}

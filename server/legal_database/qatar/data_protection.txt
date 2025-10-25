@@ -1,0 +1,10 @@
+QATAR DATA PROTECTION REGULATIONS
+
+Article 10: Data Processing
+Must have legal basis for processing. Consent must be freely given. Data used only for stated purposes.
+
+Article 15: Data Security
+Appropriate security measures required. Breaches reported within 72 hours. Encryption required for transmission.
+
+Article 20: Cross-Border Transfers
+Personal data transfers require adequate protection. Standard clauses may be used.

@@ -1,0 +1,68 @@
+{
+  "contract_id": "TEST_001",
+  "jurisdiction": "QATAR",
+  "analyzed_at": "2025-10-25T23:38:01.066541",
+  "compliance_summary": {
+    "overall_compliance_score": 50,
+    "status": "non_compliant",
+    "total_laws_analyzed": 4,
+    "compliant_laws": 0,
+    "non_compliant_laws": 0,
+    "critical_violations_count": 0
+  },
+  "law_analysis": [
+    {
+      "law": "Qatar Civil Code - Contracts",
+      "compliance_status": "unknown",
+      "compliance_score": 50,
+      "specific_articles_violated": [],
+      "compliance_issues": [],
+      "legal_risks": [],
+      "recommendations": [],
+      "severity": "medium",
+      "missing_required_clauses": []
+    },
+    {
+      "law": "Qatar Commercial Companies Law",
+      "compliance_status": "unknown",
+      "compliance_score": 50,
+      "specific_articles_violated": [],
+      "compliance_issues": [],
+      "legal_risks": [],
+      "recommendations": [],
+      "severity": "medium",
+      "missing_required_clauses": []
+    },
+    {
+      "law": "Qatar Data Protection Regulations",
+      "compliance_status": "unknown",
+      "compliance_score": 50,
+      "specific_articles_violated": [],
+      "compliance_issues": [],
+      "legal_risks": [],
+      "recommendations": [],
+      "severity": "medium",
+      "missing_required_clauses": []
+    },
+    {
+      "law": "Specific Regulations",
+      "compliance_status": "unknown",
+      "compliance_score": 50,
+      "specific_articles_violated": [],
+      "compliance_issues": [],
+      "legal_risks": [],
+      "recommendations": [],
+      "severity": "medium",
+      "missing_required_clauses": []
+    }
+  ],
+  "legal_risks": [],
+  "recommendations": [],
+  "critical_violations": [],
+  "metadata": {
+    "total_laws_available": 4,
+    "total_laws_analyzed": 4,
+    "analysis_method": "Gemini AI Legal Analysis",
+    "legal_database_used": true
+  }
+}

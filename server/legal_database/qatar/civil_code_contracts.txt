@@ -1,0 +1,28 @@
+QATAR CIVIL CODE - CONTRACT LAW PROVISIONS
+
+Article 171: Contract Formation
+A contract is validly formed when there is a clear offer, acceptance, legal capacity, and lawful object.
+
+Article 172: Written Requirements  
+Contracts exceeding QAR 10,000 must be in writing. Real estate and agency agreements must be written.
+
+Article 185: Contract Termination
+Contracts may be terminated by: mutual consent, performance, expiration, material breach, or force majeure.
+
+Article 190: Limitation of Liability
+Parties may limit liability but CANNOT exclude liability for: fraud, gross negligence, personal injury, or public policy violations.
+
+Article 195: Governing Law
+Parties may choose governing law. If not specified, Qatar law applies. Mandatory Qatar provisions cannot be excluded.
+
+Article 200: Confidentiality
+Parties must maintain confidentiality of proprietary information. Obligations survive termination.
+
+Article 210: Intellectual Property
+Unless specified otherwise, IP rights belong to creator. Work-for-hire must be explicit. Clients should own deliverables they pay for.
+
+Article 220: Payment Terms
+Payment terms must be clear. Late payment interest maximum 9% annually. Payment cannot be unreasonably withheld.
+
+Article 230: Force Majeure
+Force majeure events excuse performance. Party must give prompt notice and mitigate impact.
