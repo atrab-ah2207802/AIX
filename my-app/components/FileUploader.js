@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
-  const [country, setCountry] = useState(""); // New state for country
+  const [country, setCountry] = useState("");
+  const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
+  const router = useRouter();
 
   const maxSize = 10 * 1024 * 1024; // 10 MB
 
@@ -17,7 +20,39 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
     { code: "UK", label: t("country.uk", "UK") },
     { code: "US", label: t("country.us", "US") },
   ];
-  
+
+  // 🧩 API functions
+  const uploadFile = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const res = await fetch("http://localhost:8000/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+    if (!res.ok) throw new Error("Upload failed");
+    return res.json(); // { doc_id, meta }
+  };
+
+  const extractContract = async (doc_id) => {
+    const res = await fetch("http://localhost:8000/api/extract", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ doc_id, use_llm: true, fallback_rules: true }),
+    });
+    if (!res.ok) throw new Error("Extraction failed");
+    return res.json();
+  };
+
+  const analyzeRisk = async (doc_id, extraction) => {
+    const res = await fetch("http://localhost:8000/api/risk", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ doc_id, extraction, country }),
+    });
+    if (!res.ok) throw new Error("Risk analysis failed");
+    return res.json();
+  };
 
   function onChange(e) {
     setError("");
@@ -31,13 +66,17 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
     ];
 
     if (!allowedTypes.includes(f.type) && !f.name.match(/\.(pdf|doc|docx)$/i)) {
-      setError(t("invalid_file_type", "Invalid file type. Please attach a PDF or Word document."));
+      setError(
+        t("invalid_file_type", "Invalid file type. Please attach a PDF or Word document.")
+      );
       setFile(null);
       return;
     }
 
     if (f.size > maxSize) {
-      setError(t("file_too_large", "File is too large. Maximum allowed size is 10 MB."));
+      setError(
+        t("file_too_large", "File is too large. Maximum allowed size is 10 MB.")
+      );
       setFile(null);
       return;
     }
@@ -51,26 +90,46 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
     setCountry("");
   }
 
-  function analyze() {
-    if (!file) return alert(t("no_file_selected"));
-    if (!country) return alert(t("select_country", "Please select a country for compliance analysis."));
+  async function analyze() {
+    if (!file) return alert(t("no_file_selected", "Please select a file first."));
+    if (!country)
+      return alert(t("select_country", "Please select a country for compliance analysis."));
 
-    // Example: send file and country to API
-    console.log("Uploading file:", file);
-    console.log("Selected country:", country);
+    try {
+      setLoading(true);
+
+      // Step 1: Upload
+      const upload = await uploadFile(file);
+      const doc_id = upload.doc_id;
+
+      // Step 2: Extraction
+      const extraction = await extractContract(doc_id);
+
+      // Step 3: Risk Analysis
+      const risk = await analyzeRisk(doc_id, extraction);
+
+      // Step 4: Redirect to dashboard with results
+      router.push(
+        `/dashboard?data1=${encodeURIComponent(
+          JSON.stringify(extraction)
+        )}&data2=${encodeURIComponent(JSON.stringify(risk))}`
+      );
+    } catch (err) {
+      console.error(err);
+      alert(t("analysis_error", `Error: ${err.message}`));
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <div className="uploader-container">
-      <label className="uploader-label">{t("attach_document")}</label>
+      <label className="uploader-label">{t("attach_document", "Attach a document")}</label>
 
       {!file && (
         <input
           type="file"
-          accept={
-            accept +
-            ",application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-          }
+          accept={`${accept},application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document`}
           onChange={onChange}
           className="file-input"
         />
@@ -87,25 +146,34 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
             </p>
           </div>
 
-          {/* Country Dropdown */}
           <div className="country-selector">
-            <label htmlFor="country">{t("select_country", "Compliance Law")}</label>
+            <label htmlFor="country">{t("select_country", "Compliance Region")}</label>
             <select
               id="country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               className="country-dropdown"
+              disabled={loading}
             >
-              <option value="">{t("select_country_placeholder", "Choose a country")}</option>
+              <option value="">
+                {t("select_country_placeholder", "Choose a country")}
+              </option>
               {countries.map((c) => (
-                <option key={c.code} value={c.code}>{c.label}</option>
+                <option key={c.code} value={c.code}>
+                  {c.label}
+                </option>
               ))}
             </select>
           </div>
 
           <div className="file-actions">
-            <button type="button" className="remove-btn" onClick={clear}>
-              {t("remove")}
+            <button
+              type="button"
+              className="remove-btn"
+              onClick={clear}
+              disabled={loading}
+            >
+              {t("remove", "Remove")}
             </button>
 
             <motion.button
@@ -115,14 +183,21 @@ export default function FileUploader({ accept = ".pdf,.doc,.docx" }) {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
               onClick={analyze}
+              disabled={loading}
             >
-              <span className="btn-title">{t("analyze")}</span>
+              <span className="btn-title">
+                {loading ? t("processing", "Processing...") : t("analyze", "Analyze")}
+              </span>
             </motion.button>
           </div>
         </div>
       )}
 
-      {!file && <p className="placeholder-text">{t("no_file_selected")}</p>}
+      {!file && (
+        <p className="placeholder-text">
+          {t("no_file_selected", "No file selected yet.")}
+        </p>
+      )}
     </div>
   );
 }
