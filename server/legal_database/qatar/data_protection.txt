@@ -1,10 +1,20 @@
-QATAR DATA PROTECTION REGULATIONS
+Article 5: Data Minimization
+Collect only necessary data. Retention periods specified.
 
 Article 10: Data Processing
 Must have legal basis for processing. Consent must be freely given. Data used only for stated purposes.
 
+Article 12: Individual Rights
+Right to access, correct, delete. 30-day response time.
+
 Article 15: Data Security
 Appropriate security measures required. Breaches reported within 72 hours. Encryption required for transmission.
 
+Article 18: Data Protection Officer
+Required for large-scale processing.
+
 Article 20: Cross-Border Transfers
 Personal data transfers require adequate protection. Standard clauses may be used.
+
+Article 25: Penalties
+Fines up to QAR 5,000,000 for violations.

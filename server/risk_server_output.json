@@ -1,23 +1,23 @@
 {
   "overall_score": 60,
   "risk_level": "high",
-  "summary": "Analysis completed with 10 risks identified",
+  "summary": "Analysis completed with 13 risks identified",
   "flags": [
     {
       "severity": "critical",
       "category": "liability",
       "title": "Unlimited Liability Exposure",
-      "description": "The contract does not contain any clause limiting the extent of damages that either party can claim from the other. This could expose QDB to unlimited financial exposure in case of a breach by Vendor Inc.",
-      "recommendation": "Incorporate a Limitation of Liability clause that caps the total liability of each party, ideally to the value of the contract or a mutually agreed-upon sum, with carve-outs for gross negligence, willful misconduct, and confidentiality breaches.",
+      "description": "The contract does not contain a limitation of liability clause, potentially exposing QDB to unlimited damages in case of breach or negligence by the Supplier.",
+      "recommendation": "Incorporate a limitation of liability clause that caps the Supplier's liability, ideally to the value of the contract or a defined amount, and exclude certain liabilities like gross negligence or willful misconduct.",
       "clause_reference": "N/A (Missing Clause)",
       "confidence": 0.95
     },
     {
       "severity": "critical",
       "category": "ip_ownership",
-      "title": "Intellectual Property Ownership Unclear",
-      "description": "The contract does not specify who owns the intellectual property (IP) developed or utilized during the performance of the services. For QDB to benefit fully, it should own the deliverables.",
-      "recommendation": "Add an IP Ownership clause clearly stating that all intellectual property rights, including copyrights, patents, and trademarks, in any deliverables created by Vendor Inc. under this agreement shall belong exclusively to QDB.",
+      "title": "Unclear Intellectual Property Ownership",
+      "description": "The contract does not specify who owns the intellectual property (IP) created by the Supplier during the performance of services. Deliverables should be owned by QDB.",
+      "recommendation": "Add a clause explicitly stating that all IP rights, including copyrights, patents, and trade secrets, developed or created by the Supplier in connection with this Agreement shall belong exclusively to QDB upon full payment.",
       "clause_reference": "N/A (Missing Clause)",
       "confidence": 0.95
     },
@@ -25,8 +25,8 @@
       "severity": "critical",
       "category": "missing_clause",
       "title": "Missing Indemnification Clause",
-      "description": "The agreement lacks an indemnification clause, which would typically require one party to compensate the other for specific losses or damages, such as third-party claims arising from the indemnifying party's actions or omissions.",
-      "recommendation": "Include an indemnification clause where Vendor Inc. agrees to indemnify and hold harmless QDB against any claims, damages, losses, liabilities, and expenses arising from Vendor Inc.'s breach of contract, negligence, or infringement of third-party rights.",
+      "description": "The contract lacks an indemnification clause. QDB is not protected from third-party claims arising from the Supplier's actions or omissions.",
+      "recommendation": "Include an indemnification clause where the Supplier agrees to indemnify, defend, and hold harmless QDB from any and all claims, damages, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to the Supplier's performance under this Agreement or its breach of any warranties or representations.",
       "clause_reference": "N/A (Missing Clause)",
       "confidence": 0.95
     },
@@ -34,17 +34,17 @@
       "severity": "high",
       "category": "missing_clause",
       "title": "Missing Confidentiality/Non-Disclosure Clause",
-      "description": "There is no clause obligating either party to keep sensitive information exchanged during the contract term confidential. This poses a risk of unauthorized disclosure of proprietary business information.",
-      "recommendation": "Insert a comprehensive Confidentiality or Non-Disclosure Agreement (NDA) clause that defines confidential information, outlines the obligations of both parties to protect it, and specifies the duration of the confidentiality obligation.",
+      "description": "The agreement does not include a confidentiality clause, leaving sensitive information shared between QDB and Supplier unprotected.",
+      "recommendation": "Insert a comprehensive confidentiality clause that defines confidential information, outlines obligations of both parties regarding its use and disclosure, and specifies the duration of confidentiality obligations.",
       "clause_reference": "N/A (Missing Clause)",
       "confidence": 0.85
     },
     {
       "severity": "high",
       "category": "missing_clause",
-      "title": "Missing Termination Rights Clause",
-      "description": "The contract does not define conditions under which either party can terminate the agreement before its expiration date, nor does it outline the procedures for termination.",
-      "recommendation": "Include a Termination clause detailing grounds for termination (e.g., material breach, insolvency), notice periods required, and consequences of termination for both parties.",
+      "title": "Missing Termination Rights",
+      "description": "The contract does not define the conditions or procedures under which either party can terminate the agreement, leaving significant uncertainty.",
+      "recommendation": "Add clauses detailing termination rights, including termination for cause (e.g., material breach) and termination for convenience (if desired), along with notice periods and consequences of termination.",
       "clause_reference": "N/A (Missing Clause)",
       "confidence": 0.85
     },
@@ -52,61 +52,203 @@
       "severity": "high",
       "category": "missing_clause",
       "title": "Missing Dispute Resolution Clause",
-      "description": "The absence of a dispute resolution mechanism means that any disagreements will likely default to potentially lengthy and costly litigation without predefined procedures for negotiation, mediation, or arbitration.",
-      "recommendation": "Add a Dispute Resolution clause specifying the preferred method for resolving disputes, such as negotiation, mediation, or arbitration, and potentially the jurisdiction for any legal proceedings not resolved by these methods.",
-      "clause_reference": "N/A (Missing Clause)",
-      "confidence": 0.85
-    },
-    {
-      "severity": "high",
-      "category": "missing_clause",
-      "title": "Missing Force Majeure Clause",
-      "description": "The agreement does not address 'force majeure' events (unforeseeable circumstances beyond a party's control) that could prevent performance, leaving parties liable for non-performance due to events outside their control.",
-      "recommendation": "Incorporate a Force Majeure clause that excuses non-performance due to specific events (e.g., natural disasters, war, pandemics) and outlines the notification procedures and remedies.",
+      "description": "There is no clause specifying how disputes arising under the contract will be resolved, which can lead to costly and time-consuming litigation.",
+      "recommendation": "Include a dispute resolution clause outlining the preferred method(s), such as negotiation, mediation, arbitration, or litigation, and specify the venue.",
       "clause_reference": "N/A (Missing Clause)",
       "confidence": 0.85
     },
     {
       "severity": "medium",
-      "category": "payment_terms",
-      "title": "Payment Terms Risk: Long Net 60",
-      "description": "While not excessively long, a Net 60 payment term means QDB has significant cash outflow before receiving services completion, and Vendor Inc. has a considerable wait for payment.",
-      "recommendation": "Evaluate if Net 60 days from invoice date is financially manageable for QDB. Consider negotiating earlier payment milestones for partial deliverables or a discount for early payment to improve cash flow.",
+      "category": "missing_clause",
+      "title": "Missing Force Majeure Clause",
+      "description": "The absence of a force majeure clause means there's no clear provision for unforeseen events that may prevent performance.",
+      "recommendation": "Incorporate a force majeure clause that excuses non-performance due to events beyond a party's reasonable control (e.g., natural disasters, acts of war), and outlines notice requirements and mitigation obligations.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.75
+    },
+    {
+      "severity": "high",
+      "category": "jurisdiction_compliance",
+      "title": "Governing Law Matches Target Jurisdiction",
+      "description": "The governing law is specified as 'laws of Qatar', which aligns with the target jurisdiction of QATAR.",
+      "recommendation": "No action needed. This aligns with the target jurisdiction.",
+      "clause_reference": "GOVERNING LAW",
+      "confidence": 0.85
+    },
+    {
+      "severity": "low",
+      "category": "termination_rights",
+      "title": "Unfair Termination Rights (None Specified)",
+      "description": "The contract does not specify any termination rights for either party. While not inherently unfair, the absence of defined rights can lead to one-sided outcomes if a dispute arises.",
+      "recommendation": "As noted in the 'Missing Termination Rights' flag, add provisions for termination for cause and potentially for convenience, ensuring fairness and clarity for both parties.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.65
+    },
+    {
+      "severity": "medium",
+      "category": "warranty_issues",
+      "title": "Missing Warranties",
+      "description": "The contract does not include any express warranties from the Supplier regarding the quality of services or deliverables. There is also no disclaimer of 'as-is' conditions.",
+      "recommendation": "Add specific warranties from the Supplier, such as warranties of professional performance, conformity to specifications, and freedom from defects. Clarify that services will be provided in a professional and workmanlike manner.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.75
+    },
+    {
+      "severity": "medium",
+      "category": "payment_terms_risks",
+      "title": "Payment Terms - Potential Cash Flow Strain",
+      "description": "Payment is due net 60 days from invoice date upon completion of services. This might be a strain on Supplier's cash flow depending on project duration and timing of invoice.",
+      "recommendation": "Review if the net 60 days payment term is acceptable for QDB's cash flow. Consider if partial payments or milestone-based payments are more appropriate, especially for longer projects.",
       "clause_reference": "PAYMENT TERMS",
       "confidence": 0.75
     },
     {
-      "severity": "medium",
-      "category": "vague_obligations",
-      "title": "Vague Service Deliverables",
-      "description": "The phrase 'completion of services' is vague. The contract does not specify what constitutes 'completion' or the exact scope of services to be rendered by Vendor Inc.",
-      "recommendation": "Define 'services' and 'completion' explicitly. Attach a Statement of Work (SOW) or detailed Scope of Services as an exhibit to the agreement, outlining specific deliverables, timelines, and acceptance criteria.",
-      "clause_reference": "PAYMENT TERMS, SERVICE DESCRIPTION (Implied)",
-      "confidence": 0.75
+      "severity": "low",
+      "category": "data_protection",
+      "title": "Data Protection",
+      "description": "The contract does not mention GDPR or other data privacy regulations. Assuming QDB is a Qatari entity and Supplier is also operating within Qatar, specific data privacy clauses might be required under Qatari law, but likely not GDPR unless cross-border data transfer or EU citizen data is involved.",
+      "recommendation": "Verify if Qatari data protection laws require specific clauses given the nature of services. If personal data of EU citizens will be processed, GDPR compliance clauses would be essential.",
+      "clause_reference": "N/A (Missing Clause)",
+      "confidence": 0.65
     },
     {
-      "severity": "low",
-      "category": "jurisdiction_compliance",
-      "title": "Governing Law Match with Target Jurisdiction",
-      "description": "The governing law is stated as 'laws of Qatar', which aligns with the target jurisdiction of QATAR. This is compliant.",
-      "recommendation": "No action needed, this is compliant.",
-      "clause_reference": "GOVERNING LAW",
-      "confidence": 0.65
+      "severity": "medium",
+      "category": "vague_obligations",
+      "title": "Vague Obligations - Services",
+      "description": "The contract mentions 'completion of services' but does not define the scope, deliverables, or performance standards of these services. This can lead to disputes about what constitutes completion.",
+      "recommendation": "Attach a detailed Statement of Work (SOW) or Scope of Services as an exhibit to the agreement, clearly outlining all tasks, deliverables, timelines, and acceptance criteria.",
+      "clause_reference": "PAYMENT TERMS (Implicitly refers to 'completion of services')",
+      "confidence": 0.75
     }
   ],
   "recommendations": [
-    "Insert a comprehensive Confidentiality or Non-Disclosure Agreement (NDA) clause that defines confidential information, outlines the obligations of both parties to protect it, and specifies the duration of the confidentiality obligation.",
-    "Add a Dispute Resolution clause specifying the preferred method for resolving disputes, such as negotiation, mediation, or arbitration, and potentially the jurisdiction for any legal proceedings not resolved by these methods.",
-    "Define 'services' and 'completion' explicitly. Attach a Statement of Work (SOW) or detailed Scope of Services as an exhibit to the agreement, outlining specific deliverables, timelines, and acceptance criteria.",
-    "Incorporate a Limitation of Liability clause that caps the total liability of each party, ideally to the value of the contract or a mutually agreed-upon sum, with carve-outs for gross negligence, willful misconduct, and confidentiality breaches.",
-    "Incorporate a Force Majeure clause that excuses non-performance due to specific events (e.g., natural disasters, war, pandemics) and outlines the notification procedures and remedies.",
-    "Evaluate if Net 60 days from invoice date is financially manageable for QDB. Consider negotiating earlier payment milestones for partial deliverables or a discount for early payment to improve cash flow.",
-    "Include an indemnification clause where Vendor Inc. agrees to indemnify and hold harmless QDB against any claims, damages, losses, liabilities, and expenses arising from Vendor Inc.'s breach of contract, negligence, or infringement of third-party rights.",
-    "No action needed, this is compliant.",
-    "Include a Termination clause detailing grounds for termination (e.g., material breach, insolvency), notice periods required, and consequences of termination for both parties.",
-    "Add an IP Ownership clause clearly stating that all intellectual property rights, including copyrights, patents, and trademarks, in any deliverables created by Vendor Inc. under this agreement shall belong exclusively to QDB."
+    "Add clauses detailing termination rights, including termination for cause (e.g., material breach) and termination for convenience (if desired), along with notice periods and consequences of termination.",
+    "Insert a comprehensive confidentiality clause that defines confidential information, outlines obligations of both parties regarding its use and disclosure, and specifies the duration of confidentiality obligations.",
+    "Verify if Qatari data protection laws require specific clauses given the nature of services. If personal data of EU citizens will be processed, GDPR compliance clauses would be essential.",
+    "No action needed. This aligns with the target jurisdiction.",
+    "As noted in the 'Missing Termination Rights' flag, add provisions for termination for cause and potentially for convenience, ensuring fairness and clarity for both parties.",
+    "Review if the net 60 days payment term is acceptable for QDB's cash flow. Consider if partial payments or milestone-based payments are more appropriate, especially for longer projects.",
+    "Attach a detailed Statement of Work (SOW) or Scope of Services as an exhibit to the agreement, clearly outlining all tasks, deliverables, timelines, and acceptance criteria.",
+    "Incorporate a force majeure clause that excuses non-performance due to events beyond a party's reasonable control (e.g., natural disasters, acts of war), and outlines notice requirements and mitigation obligations.",
+    "Add specific warranties from the Supplier, such as warranties of professional performance, conformity to specifications, and freedom from defects. Clarify that services will be provided in a professional and workmanlike manner.",
+    "Add a clause explicitly stating that all IP rights, including copyrights, patents, and trade secrets, developed or created by the Supplier in connection with this Agreement shall belong exclusively to QDB upon full payment."
   ],
-  "analyzed_at": "2025-10-26T00:46:08.311414",
+  "term_consistency": [
+    {
+      "term": "Payment",
+      "definitions": [
+        "References to payment found in contract"
+      ],
+      "is_consistent": true,
+      "issue_description": null
+    }
+  ],
+  "clause_comparisons": [
+    {
+      "clause_type": "liability",
+      "standard_version": "Company standard liability clause",
+      "contract_version": "The contract does not contain a limitation of liability clause, potentially exposing QDB to unlimited damages in case of breach or negligence by the Supplier....",
+      "deviation_severity": "critical",
+      "explanation": "The contract does not contain a limitation of liability clause, potentially exposing QDB to unlimited damages in case of breach or negligence by the Supplier."
+    },
+    {
+      "clause_type": "intellectual_property",
+      "standard_version": "Company standard intellectual_property clause",
+      "contract_version": "The contract does not specify who owns the intellectual property (IP) created by the Supplier during the performance of services. Deliverables should be owned by QDB....",
+      "deviation_severity": "critical",
+      "explanation": "The contract does not specify who owns the intellectual property (IP) created by the Supplier during the performance of services. Deliverables should be owned by QDB."
+    },
+    {
+      "clause_type": "indemnification",
+      "standard_version": "Company standard indemnification clause",
+      "contract_version": "The contract lacks an indemnification clause. QDB is not protected from third-party claims arising from the Supplier's actions or omissions....",
+      "deviation_severity": "critical",
+      "explanation": "The contract lacks an indemnification clause. QDB is not protected from third-party claims arising from the Supplier's actions or omissions."
+    },
+    {
+      "clause_type": "confidentiality",
+      "standard_version": "Company standard confidentiality clause",
+      "contract_version": "The agreement does not include a confidentiality clause, leaving sensitive information shared between QDB and Supplier unprotected....",
+      "deviation_severity": "high",
+      "explanation": "The agreement does not include a confidentiality clause, leaving sensitive information shared between QDB and Supplier unprotected."
+    },
+    {
+      "clause_type": "termination",
+      "standard_version": "Company standard termination clause",
+      "contract_version": "The contract does not define the conditions or procedures under which either party can terminate the agreement, leaving significant uncertainty....",
+      "deviation_severity": "high",
+      "explanation": "The contract does not define the conditions or procedures under which either party can terminate the agreement, leaving significant uncertainty."
+    },
+    {
+      "clause_type": "dispute_resolution",
+      "standard_version": "Company standard dispute_resolution clause",
+      "contract_version": "There is no clause specifying how disputes arising under the contract will be resolved, which can lead to costly and time-consuming litigation....",
+      "deviation_severity": "high",
+      "explanation": "There is no clause specifying how disputes arising under the contract will be resolved, which can lead to costly and time-consuming litigation."
+    },
+    {
+      "clause_type": "termination",
+      "standard_version": "Company standard termination clause",
+      "contract_version": "The contract does not specify any termination rights for either party. While not inherently unfair, the absence of defined rights can lead to one-sided outcomes if a dispute arises....",
+      "deviation_severity": "low",
+      "explanation": "The contract does not specify any termination rights for either party. While not inherently unfair, the absence of defined rights can lead to one-sided outcomes if a dispute arises."
+    },
+    {
+      "clause_type": "warranties",
+      "standard_version": "Company standard warranties clause",
+      "contract_version": "The contract does not include any express warranties from the Supplier regarding the quality of services or deliverables. There is also no disclaimer of 'as-is' conditions....",
+      "deviation_severity": "medium",
+      "explanation": "The contract does not include any express warranties from the Supplier regarding the quality of services or deliverables. There is also no disclaimer of 'as-is' conditions."
+    }
+  ],
+  "legal_advice": [
+    {
+      "topic": "Unlimited Liability Exposure",
+      "advice": "This clause poses critical legal risk that requires immediate attention. The contract does not contain a limitation of liability clause, potentially exposing QDB to unlimited damages in case of breach or negligence by the Supplier.",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "Incorporate a limitation of liability clause that caps the Supplier's liability, ideally to the value of the contract or a defined amount, and exclude certain liabilities like gross negligence or willful misconduct."
+      ]
+    },
+    {
+      "topic": "Unclear Intellectual Property Ownership",
+      "advice": "This clause poses critical legal risk that requires immediate attention. The contract does not specify who owns the intellectual property (IP) created by the Supplier during the performance of services. Deliverables should be owned by QDB.",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "Add a clause explicitly stating that all IP rights, including copyrights, patents, and trade secrets, developed or created by the Supplier in connection with this Agreement shall belong exclusively to QDB upon full payment."
+      ]
+    },
+    {
+      "topic": "Missing Indemnification Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. The contract lacks an indemnification clause. QDB is not protected from third-party claims arising from the Supplier's actions or omissions.",
+      "risk_level": "critical",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "Include an indemnification clause where the Supplier agrees to indemnify, defend, and hold harmless QDB from any and all claims, damages, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to the Supplier's performance under this Agreement or its breach of any warranties or representations."
+      ]
+    },
+    {
+      "topic": "Missing Confidentiality/Non-Disclosure Clause",
+      "advice": "This clause poses significant legal risk that should be addressed. The agreement does not include a confidentiality clause, leaving sensitive information shared between QDB and Supplier unprotected.",
+      "risk_level": "high",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "Insert a comprehensive confidentiality clause that defines confidential information, outlines obligations of both parties regarding its use and disclosure, and specifies the duration of confidentiality obligations."
+      ]
+    },
+    {
+      "topic": "Missing Termination Rights",
+      "advice": "This clause poses significant legal risk that should be addressed. The contract does not define the conditions or procedures under which either party can terminate the agreement, leaving significant uncertainty.",
+      "risk_level": "high",
+      "supporting_law": "General Contract Law Principles",
+      "recommendations": [
+        "Add clauses detailing termination rights, including termination for cause (e.g., material breach) and termination for convenience (if desired), along with notice periods and consequences of termination."
+      ]
+    }
+  ],
+  "analyzed_at": "2025-10-26T07:49:33.343965",
   "contract_metadata": {
     "contract_name": "analyzed_contract.docx",
     "parties": [
@@ -122,14 +264,83 @@
     "effective_date": "2025-01-01",
     "expiry_date": "2025-12-31",
     "total_value": "QAR 500000",
-    "extracted_clauses_count": 5
+    "extracted_clauses_count": 1
   },
   "legal_compliance": {
-    "analyzed": false,
-    "jurisdiction": "N/A",
+    "contract_id": "test_001",
+    "jurisdiction": "QATAR",
+    "analyzed_at": "2025-10-26T07:50:03.964242",
     "compliance_summary": {
-      "overall_compliance_score": 0,
-      "status": "not_analyzed"
+      "overall_compliance_score": 38,
+      "status": "non_compliant",
+      "total_laws_analyzed": 4,
+      "compliant_laws": 0,
+      "non_compliant_laws": 1,
+      "critical_violations_count": 0
+    },
+    "law_analysis": [
+      {
+        "law": "Qatar Civil Code - Contracts",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      },
+      {
+        "law": "Qatar Commercial Companies Law",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      },
+      {
+        "law": "Qatar Data Protection Regulations",
+        "compliance_status": "non_compliant",
+        "compliance_score": 0,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      },
+      {
+        "law": "Specific Regulations",
+        "compliance_status": "unknown",
+        "compliance_score": 50,
+        "specific_articles_violated": [],
+        "compliance_issues": [],
+        "legal_risks": [],
+        "recommendations": [],
+        "severity": "medium",
+        "missing_required_clauses": []
+      }
+    ],
+    "legal_risks": [
+      {
+        "law": "Qatar Data Protection Regulations",
+        "severity": "medium",
+        "issues": [],
+        "articles_violated": [],
+        "risks": [],
+        "compliance_score": 0
+      }
+    ],
+    "recommendations": [],
+    "critical_violations": [],
+    "metadata": {
+      "total_laws_available": 4,
+      "total_laws_analyzed": 4,
+      "analysis_method": "Gemini AI Legal Analysis",
+      "legal_database_used": true
     }
   }
 }
