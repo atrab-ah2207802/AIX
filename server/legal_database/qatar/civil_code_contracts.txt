@@ -1,65 +1,182 @@
-Article 171: Contract Formation
-A contract is validly formed when there is a clear offer, acceptance, legal capacity, and lawful object. Electronic contracts are valid. Verbal contracts binding under QAR 10,000.
-
-Article 172: Written Requirements
-Contracts exceeding QAR 10,000 must be in writing. Real estate and agency agreements must be written. Electronic signatures valid.
-
-Article 173: Good Faith Requirement
-Parties must perform contracts in good faith. Bad faith damages available.
-
-Article 174: Public Policy
-Contracts violating public policy or morals are void.
-
-Article 175: Capacity Requirements
-Minors under 18 lack capacity. Corporate entities must have proper authorization.
-
-Article 180: Interpretation Rules
-Ambiguities construed against drafter. Commercial context considered.
-
-Article 185: Contract Termination
-Contracts may be terminated by: mutual consent, performance, expiration, material breach, or force majeure.
-
-Article 186: Material Breach Definition
-Failure that substantially deprives benefit. 30-day cure period reasonable.
-
-Article 190: Limitation of Liability
-Parties may limit liability but CANNOT exclude liability for: fraud, gross negligence, personal injury, or public policy violations.
-
-Article 191: Liquidated Damages
-Must be reasonable estimate of actual damages. Penalties unenforceable.
-
-Article 195: Governing Law
-Parties may choose governing law. If not specified, Qatar law applies. Mandatory Qatar provisions cannot be excluded.
-
-Article 200: Confidentiality
-Parties must maintain confidentiality of proprietary information. Obligations survive termination for 3 years minimum.
-
-Article 205: Assignment and Delegation
-Rights assignable unless personal. Duties delegable with consent.
-
-Article 210: Intellectual Property
-Unless specified otherwise, IP rights belong to creator. Work-for-hire must be explicit. Clients should own deliverables they pay for.
-
-Article 215: Warranties
-Implied warranty of merchantability. Fitness for purpose implied if specified.
-
-Article 220: Payment Terms
-Payment terms must be clear. Late payment interest maximum 9% annually. Payment cannot be unreasonably withheld.
-
-Article 225: Set-off Rights
-Mutual debts may be set off. Notice required.
-
-Article 230: Force Majeure
-Force majeure events excuse performance. Party must give prompt notice and mitigate impact.
-
-Article 235: Notice Provisions
-Written notice required. Deemed received 3 business days after mailing.
-
-Article 240: Severability
-Invalid provisions severable. Remainder enforceable.
-
-Article 245: Entire Agreement
-Contract supersedes prior agreements. Modifications must be written.
-
-Article 250: Third Party Rights
-No third party benefits unless specified.
+{
+  "QATAR_CIVIL_CODE": {
+    "articles": [
+      {
+        "article_number": "المادة 171",
+        "article_number_en": "Article 171",
+        "title_ar": "انعقاد العقد",
+        "title_en": "Contract Formation",
+        "content_ar": "ينعقد العقد عند وجود عرض واضح وقبول والأهلية القانونية والموضوع المشروع. العقود الإلكترونية صحيحة. العقود الشفهية ملزمة لأقل من 10,000 ريال قطري.",
+        "content_en": "A contract is validly formed when there is a clear offer, acceptance, legal capacity, and lawful object. Electronic contracts are valid. Verbal contracts binding under QAR 10,000."
+      },
+      {
+        "article_number": "المادة 172",
+        "article_number_en": "Article 172",
+        "title_ar": "متطلبات الكتابة",
+        "title_en": "Written Requirements",
+        "content_ar": "يجب أن تكون العقود التي تزيد عن 10,000 ريال قطري مكتوبة. يجب أن تكون عقود العقود وعقود الوكالة مكتوبة. التوقيعات الإلكترونية صالحة.",
+        "content_en": "Contracts exceeding QAR 10,000 must be in writing. Real estate and agency agreements must be written. Electronic signatures valid."
+      },
+      {
+        "article_number": "المادة 173",
+        "article_number_en": "Article 173",
+        "title_ar": "شرط حسن النية",
+        "title_en": "Good Faith Requirement",
+        "content_ar": "يجب على الأطراف تنفيذ العقود بحسن نية. التعويضات عن سوء النية متاحة.",
+        "content_en": "Parties must perform contracts in good faith. Bad faith damages available."
+      },
+      {
+        "article_number": "المادة 174",
+        "article_number_en": "Article 174",
+        "title_ar": "النظام العام",
+        "title_en": "Public Policy",
+        "content_ar": "العقود التي تنتهك النظام العام أو الآداب باطلة.",
+        "content_en": "Contracts violating public policy or morals are void."
+      },
+      {
+        "article_number": "المادة 175",
+        "article_number_en": "Article 175",
+        "title_ar": "متطلبات الأهلية",
+        "title_en": "Capacity Requirements",
+        "content_ar": "القاصرون دون 18 سنة يفتقرون إلى الأهلية. يجب أن يكون للكيانات الشرعية التفويض المناسب.",
+        "content_en": "Minors under 18 lack capacity. Corporate entities must have proper authorization."
+      },
+      {
+        "article_number": "المادة 180",
+        "article_number_en": "Article 180",
+        "title_ar": "قواعد التفسير",
+        "title_en": "Interpretation Rules",
+        "content_ar": "يتم تفسير الغموض ضد محرر العقد. يؤخذ في الاعتبار السياق التجاري.",
+        "content_en": "Ambiguities construed against drafter. Commercial context considered."
+      },
+      {
+        "article_number": "المادة 185",
+        "article_number_en": "Article 185",
+        "title_ar": "إنهاء العقد",
+        "title_en": "Contract Termination",
+        "content_ar": "يمكن إنهاء العقود عن طريق: التراضي، التنفيذ، انتهاء المدة، الإخلال الجوهري، أو القوة القاهرة.",
+        "content_en": "Contracts may be terminated by: mutual consent, performance, expiration, material breach, or force majeure."
+      },
+      {
+        "article_number": "المادة 186",
+        "article_number_en": "Article 186",
+        "title_ar": "تعريف الإخلال الجوهري",
+        "title_en": "Material Breach Definition",
+        "content_ar": "الفشل الذي يحرم بشكل كبير من المنفعة. فترة العلاج 30 يوم معقولة.",
+        "content_en": "Failure that substantially deprives benefit. 30-day cure period reasonable."
+      },
+      {
+        "article_number": "المادة 190",
+        "article_number_en": "Article 190",
+        "title_ar": "تحديد المسؤولية",
+        "title_en": "Limitation of Liability",
+        "content_ar": "يمكن للأطراف تحديد المسؤولية ولكن لا يمكن استبعاد المسؤولية عن: الاحتيال، الإهمال الجسيم، الأضرار الشخصية، أو انتهاكات السياسة العامة.",
+        "content_en": "Parties may limit liability but CANNOT exclude liability for: fraud, gross negligence, personal injury, or public policy violations."
+      },
+      {
+        "article_number": "المادة 191",
+        "article_number_en": "Article 191",
+        "title_ar": "الضرائر المتفق عليها",
+        "title_en": "Liquidated Damages",
+        "content_ar": "يجب أن تكون تقديرًا معقولًا للضرائر الفعلية. العقوبات غير قابلة للتنفيذ.",
+        "content_en": "Must be reasonable estimate of actual damages. Penalties unenforceable."
+      },
+      {
+        "article_number": "المادة 195",
+        "article_number_en": "Article 195",
+        "title_ar": "القانون الحاكم",
+        "title_en": "Governing Law",
+        "content_ar": "يمكن للأطراف اختيار القانون الحاكم. إذا لم يتم التحديد، ينطبق قانون قطر. لا يمكن استبعاد الأحكام الإلزامية لقطر.",
+        "content_en": "Parties may choose governing law. If not specified, Qatar law applies. Mandatory Qatar provisions cannot be excluded."
+      },
+      {
+        "article_number": "المادة 200",
+        "article_number_en": "Article 200",
+        "title_ar": "السرية",
+        "title_en": "Confidentiality",
+        "content_ar": "يجب على الأطراف الحفاظ على سرية المعلومات الخاصة. تستمر الالتزامات بعد الإنهاء لمدة 3 سنوات كحد أدنى.",
+        "content_en": "Parties must maintain confidentiality of proprietary information. Obligations survive termination for 3 years minimum."
+      },
+      {
+        "article_number": "المادة 205",
+        "article_number_en": "Article 205",
+        "title_ar": "التنازل والتفويض",
+        "title_en": "Assignment and Delegation",
+        "content_ar": "الحقوق قابلة للتنازل ما لم تكن شخصية. يمكن تفويض الواجبات بموافقة.",
+        "content_en": "Rights assignable unless personal. Duties delegable with consent."
+      },
+      {
+        "article_number": "المادة 210",
+        "article_number_en": "Article 210",
+        "title_ar": "الملكية الفكرية",
+        "title_en": "Intellectual Property",
+        "content_ar": "ما لم ينص على خلاف ذلك، تعود حقوق الملكية الفكرية للمنشئ. يجب أن يكون العمل مقابل أتعاب صريحًا. يجب أن يمتلك العملاء ما يدفعون مقابله.",
+        "content_en": "Unless specified otherwise, IP rights belong to creator. Work-for-hire must be explicit. Clients should own deliverables they pay for."
+      },
+      {
+        "article_number": "المادة 215",
+        "article_number_en": "Article 215",
+        "title_ar": "الضمانات",
+        "title_en": "Warranties",
+        "content_ar": "الضمان الضمني للمقبولية التجارية. يُفترض صلاحية الغرض إذا تم تحديده.",
+        "content_en": "Implied warranty of merchantability. Fitness for purpose implied if specified."
+      },
+      {
+        "article_number": "المادة 220",
+        "article_number_en": "Article 220",
+        "title_ar": "شروط الدفع",
+        "title_en": "Payment Terms",
+        "content_ar": "يجب أن تكون شروط الدفع واضحة. الحد الأقصى للفائدة على التأخير في السداد 9٪ سنويًا. لا يمكن حجب الدفع بشكل غير معقول.",
+        "content_en": "Payment terms must be clear. Late payment interest maximum 9% annually. Payment cannot be unreasonably withheld."
+      },
+      {
+        "article_number": "المادة 225",
+        "article_number_en": "Article 225",
+        "title_ar": "حقوق المقاصة",
+        "title_en": "Set-off Rights",
+        "content_ar": "يمكن مقاصة الديون المتبادلة. الإشعار مطلوب.",
+        "content_en": "Mutual debts may be set off. Notice required."
+      },
+      {
+        "article_number": "المادة 230",
+        "article_number_en": "Article 230",
+        "title_ar": "القوة القاهرة",
+        "title_en": "Force Majeure",
+        "content_ar": "أحداث القوة القاهرة تعفي من التنفيذ. يجب على الطرف إشعار فوري وتخفيف الأثر.",
+        "content_en": "Force majeure events excuse performance. Party must give prompt notice and mitigate impact."
+      },
+      {
+        "article_number": "المادة 235",
+        "article_number_en": "Article 235",
+        "title_ar": "أحكام الإشعار",
+        "title_en": "Notice Provisions",
+        "content_ar": "الإشعار الكتابي مطلوب. يُعتبر مستلمًا بعد 3 أيام عمل من الإرسال.",
+        "content_en": "Written notice required. Deemed received 3 business days after mailing."
+      },
+      {
+        "article_number": "المادة 240",
+        "article_number_en": "Article 240",
+        "title_ar": "القابلية للفصل",
+        "title_en": "Severability",
+        "content_ar": "الأحكام غير الصالحة قابلة للفصل. الباقي قابل للتنفيذ.",
+        "content_en": "Invalid provisions severable. Remainder enforceable."
+      },
+      {
+        "article_number": "المادة 245",
+        "article_number_en": "Article 245",
+        "title_ar": "الاتفاقية الكاملة",
+        "title_en": "Entire Agreement",
+        "content_ar": "العقد يلغي الاتفاقيات السابقة. يجب أن تكون التعديلات مكتوبة.",
+        "content_en": "Contract supersedes prior agreements. Modifications must be written."
+      },
+      {
+        "article_number": "المادة 250",
+        "article_number_en": "Article 250",
+        "title_ar": "حقوق الأطراف الثالثة",
+        "title_en": "Third Party Rights",
+        "content_ar": "لا توجد منافع للأطراف الثالثة ما لم يتم التحديد.",
+        "content_en": "No third party benefits unless specified."
+      }
+    ]
+  }
+}
