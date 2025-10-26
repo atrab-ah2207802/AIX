@@ -1,23 +1,23 @@
 {
   "overall_score": 10,
   "risk_level": "critical",
-  "summary": "Critical risk: 7 critical company standard violations requiring immediate attention",
+  "summary": "Critical risk: 8 critical company standard violations requiring immediate attention",
   "flags": [
     {
       "severity": "critical",
       "category": "non_standard",
-      "title": "Missing Termination Clause",
-      "description": "Contract clause for termination is missing.",
-      "recommendation": "The termination clause is a fundamental part of any contract. Its absence creates significant legal and business risk, as it leaves the parties without a clear framework for ending the agreement. This needs to be added immediately.",
+      "title": "Absence of Termination Clause",
+      "description": "Contract clause for termination is null, indicating its absence or unstated nature. This represents a significant deviation from company standards, which require a defined termination clause.",
+      "recommendation": "The contract must include a termination clause that aligns with the company's standard termination provisions. This clause should detail conditions for termination for cause and convenience, and outline the consequences of termination.",
       "clause_reference": "termination Section",
       "confidence": 1.0
     },
     {
-      "severity": "high",
+      "severity": "critical",
       "category": "non_standard",
-      "title": "Significant deviation in payment terms and pricing model",
-      "description": "The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices will be issued or delivered.; The contract clause uses a cost-plus or fair market value approach for charging services, which is fundamentally different from the standard net 30 payment terms.",
-      "recommendation": "The contract clause significantly deviates from company standards. It lacks essential payment terms such as due dates and late fees, and proposes a different pricing model (cost-plus/fair market value) instead of standard payment terms. This clause should be renegotiated to align with the company standard payment terms, including specifying invoice issuance, payment due dates, and late fee provisions.",
+      "title": "Payment Terms Mismatch and Absence of Key Provisions",
+      "description": "The contract clause is entirely in Arabic and discusses cost-sharing for goods and services, which is fundamentally different from the English and Arabic company standard clause that specifies payment terms like invoicing, due dates, and late fees for services rendered and goods provided by QDB.; The contract clause does not mention any payment terms, due dates, or late fee structures, which are key elements of the company standard.; The contract clause's focus on 'cost-plus' and 'fair value' for services is a significant deviation from the standard invoice-based payment terms.",
+      "recommendation": "The contract clause needs to be rewritten to align with the company standard payment terms. Specifically, it should include provisions for invoicing, payment due dates (e.g., net 30 days), and late fees. The current cost-sharing model is not acceptable as a substitute for standard payment terms.",
       "clause_reference": "payment_terms Section",
       "confidence": 1.0
     },
@@ -26,7 +26,7 @@
       "category": "non_standard",
       "title": "Missing Indemnification Clause",
       "description": "Indemnification clause is completely missing from the contract.",
-      "recommendation": "The indemnification clause is a critical component of risk allocation in a contract. Its absence creates significant legal and business risk for the company. This clause must be added to the contract and should align with the company standard clause provided.",
+      "recommendation": "The contract is missing a critical indemnification clause. This exposes the company to significant legal and financial risk. The standard indemnification clause, as provided, should be inserted into the agreement.",
       "clause_reference": "indemnification Section",
       "confidence": 0.4
     },
@@ -34,26 +34,26 @@
       "severity": "critical",
       "category": "non_standard",
       "title": "Missing Confidentiality Clause",
-      "description": "The contract clause for confidentiality is missing entirely (null value provided).",
-      "recommendation": "The confidentiality clause must be inserted into the contract to protect sensitive information. A clause similar to the company standard should be used, ensuring clear definitions of confidential information, obligations of the receiving party, and exclusions from confidentiality.",
+      "description": "Confidentiality clause is missing entirely.",
+      "recommendation": "The contract is missing a confidentiality clause. This is a critical omission and must be addressed by including a comprehensive confidentiality clause that aligns with company standards. If the contract cannot be amended, it should not proceed.",
       "clause_reference": "confidentiality Section",
       "confidence": 0.8
     },
     {
       "severity": "critical",
       "category": "non_standard",
-      "title": "Missing Intellectual Property Clause",
-      "description": "The contract clause is missing entirely, which represents a critical gap in intellectual property protection.",
-      "recommendation": "The contract clause for intellectual property is entirely absent. This is a critical omission. The company standard clause, which assigns all intellectual property developed during the performance of services to the company, must be included in the contract.",
+      "title": "Omission of Intellectual Property Clause",
+      "description": "Contract clause for intellectual property is null, which is a complete omission and creates significant legal and business risk as there is no agreement on ownership of IP created during the engagement.",
+      "recommendation": "The contract must include a comprehensive intellectual property clause that clearly assigns ownership of all developed IP to the Company, mirroring the provided company standard. Ensure the clause is not null and accurately reflects the agreed-upon terms for IP.",
       "clause_reference": "intellectual_property Section",
       "confidence": 0.6
     },
     {
       "severity": "critical",
       "category": "non_standard",
-      "title": "Absence of Warranty Clause",
-      "description": "The contract clause for warranties is null, meaning no warranties are included in the contract. This is a significant deviation from the company standard, which includes express warranties for workmanship, materials, and substantial performance in accordance with documentation.",
-      "recommendation": "The contract must include a warranty clause that aligns with the company standard. Specifically, it should warrant that the Product/Service provided will be free from defects in workmanship and materials for a period of ninety (90) days from the Effective Date and will perform substantially in accordance with the Documentation during such warranty period.",
+      "title": "Missing Warranty Clause",
+      "description": "The contract clause for warranties is completely missing (null). This is a significant deviation from the company standard, which includes specific warranty terms regarding defects and performance.",
+      "recommendation": "Insert the standard warranty clause into the contract or negotiate for equivalent warranty protections. Failure to include warranties exposes the company to significant risk if the product/service is defective or does not perform as expected.",
       "clause_reference": "warranties Section",
       "confidence": 0.8
     },
@@ -61,30 +61,30 @@
       "severity": "critical",
       "category": "non_standard",
       "title": "Missing Dispute Resolution Clause",
-      "description": "Contract clause for dispute resolution is missing entirely.",
-      "recommendation": "The contract clause for dispute resolution is completely absent. This creates significant legal risk. The company standard clause, which includes negotiation, mediation, and binding arbitration, should be incorporated into the contract immediately.",
+      "description": "The contract clause for dispute resolution is entirely missing (null), which deviates significantly from the company standard that mandates a multi-step dispute resolution process including negotiation, mediation, and binding arbitration.",
+      "recommendation": "The contract clause for dispute resolution must be updated to include the standard multi-step process: direct good-faith negotiations for 30 days, followed by mediation, and finally binding arbitration if mediation fails. Failure to address this could lead to costly and unpredictable litigation.",
       "clause_reference": "dispute_resolution Section",
       "confidence": 0.6
     },
     {
       "severity": "critical",
       "category": "non_standard",
-      "title": "Missing Qatari Specific Clause",
-      "description": "The contract clause \"qatar_specific_clauses\" is missing, while the company standard requires specific clauses related to Qatari law and jurisdiction.",
-      "recommendation": "Insert the company standard Qatari specific clause, ensuring the specific law number and year are filled in. This clause is critical for governing disputes and ensuring contractual terms are interpreted in accordance with Qatari law.",
+      "title": "Complete Absence of Qatar-Specific Clauses",
+      "description": "The contract clause for Qatar-specific clauses is completely missing. This is a critical omission as it fails to incorporate any of the required legal protections and compliance measures stipulated by company standards for Qatari law.",
+      "recommendation": "The clause \"In accordance with Qatari Law No. ( ) of 2024, the parties agree that any disputes shall be subject to the exclusive jurisdiction of the Qatari courts. All contractual terms shall be interpreted in a manner consistent with the provisions of the Qatari Civil Code.\" must be inserted into the contract under the 'qatar_specific_clauses' section.",
       "clause_reference": "qatar_specific_clauses Section",
       "confidence": 0.7
     }
   ],
   "recommendations": [
-    "Insert the company standard Qatari specific clause, ensuring the specific law number and year are filled in. This clause is critical for governing disputes and ensuring contractual terms are interpreted in accordance with Qatari law.",
-    "The termination clause is a fundamental part of any contract. Its absence creates significant legal and business risk, as it leaves the parties without a clear framework for ending the agreement. This needs to be added immediately.",
-    "The contract clause for intellectual property is entirely absent. This is a critical omission. The company standard clause, which assigns all intellectual property developed during the performance of services to the company, must be included in the contract.",
-    "The confidentiality clause must be inserted into the contract to protect sensitive information. A clause similar to the company standard should be used, ensuring clear definitions of confidential information, obligations of the receiving party, and exclusions from confidentiality.",
-    "The contract clause significantly deviates from company standards. It lacks essential payment terms such as due dates and late fees, and proposes a different pricing model (cost-plus/fair market value) instead of standard payment terms. This clause should be renegotiated to align with the company standard payment terms, including specifying invoice issuance, payment due dates, and late fee provisions.",
-    "The contract clause for dispute resolution is completely absent. This creates significant legal risk. The company standard clause, which includes negotiation, mediation, and binding arbitration, should be incorporated into the contract immediately.",
-    "The indemnification clause is a critical component of risk allocation in a contract. Its absence creates significant legal and business risk for the company. This clause must be added to the contract and should align with the company standard clause provided.",
-    "The contract must include a warranty clause that aligns with the company standard. Specifically, it should warrant that the Product/Service provided will be free from defects in workmanship and materials for a period of ninety (90) days from the Effective Date and will perform substantially in accordance with the Documentation during such warranty period."
+    "The contract is missing a confidentiality clause. This is a critical omission and must be addressed by including a comprehensive confidentiality clause that aligns with company standards. If the contract cannot be amended, it should not proceed.",
+    "The clause \"In accordance with Qatari Law No. ( ) of 2024, the parties agree that any disputes shall be subject to the exclusive jurisdiction of the Qatari courts. All contractual terms shall be interpreted in a manner consistent with the provisions of the Qatari Civil Code.\" must be inserted into the contract under the 'qatar_specific_clauses' section.",
+    "The contract must include a comprehensive intellectual property clause that clearly assigns ownership of all developed IP to the Company, mirroring the provided company standard. Ensure the clause is not null and accurately reflects the agreed-upon terms for IP.",
+    "Insert the standard warranty clause into the contract or negotiate for equivalent warranty protections. Failure to include warranties exposes the company to significant risk if the product/service is defective or does not perform as expected.",
+    "The contract must include a termination clause that aligns with the company's standard termination provisions. This clause should detail conditions for termination for cause and convenience, and outline the consequences of termination.",
+    "The contract clause for dispute resolution must be updated to include the standard multi-step process: direct good-faith negotiations for 30 days, followed by mediation, and finally binding arbitration if mediation fails. Failure to address this could lead to costly and unpredictable litigation.",
+    "The contract clause needs to be rewritten to align with the company standard payment terms. Specifically, it should include provisions for invoicing, payment due dates (e.g., net 30 days), and late fees. The current cost-sharing model is not acceptable as a substitute for standard payment terms.",
+    "The contract is missing a critical indemnification clause. This exposes the company to significant legal and financial risk. The standard indemnification clause, as provided, should be inserted into the agreement."
   ],
   "term_consistency": [
     {
@@ -100,16 +100,16 @@
     {
       "clause_type": "termination",
       "standard_version": "Company standard termination clause",
-      "contract_version": "Contract clause for termination is missing....",
+      "contract_version": "Contract clause for termination is null, indicating its absence or unstated nature. This represents a significant deviation from company standards, which require a defined termination clause....",
       "deviation_severity": "critical",
-      "explanation": "Contract clause for termination is missing."
+      "explanation": "Contract clause for termination is null, indicating its absence or unstated nature. This represents a significant deviation from company standards, which require a defined termination clause."
     },
     {
       "clause_type": "payment",
       "standard_version": "Company standard payment clause",
-      "contract_version": "The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices...",
-      "deviation_severity": "high",
-      "explanation": "The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices will be issued or delivered.; The contract clause uses a cost-plus or fair market value approach for charging services, which is fundamentally different from the standard net 30 payment terms."
+      "contract_version": "The contract clause is entirely in Arabic and discusses cost-sharing for goods and services, which is fundamentally different from the English and Arabic company standard clause that specifies payment...",
+      "deviation_severity": "critical",
+      "explanation": "The contract clause is entirely in Arabic and discusses cost-sharing for goods and services, which is fundamentally different from the English and Arabic company standard clause that specifies payment terms like invoicing, due dates, and late fees for services rendered and goods provided by QDB.; The contract clause does not mention any payment terms, due dates, or late fee structures, which are key elements of the company standard.; The contract clause's focus on 'cost-plus' and 'fair value' for services is a significant deviation from the standard invoice-based payment terms."
     },
     {
       "clause_type": "indemnification",
@@ -121,49 +121,49 @@
     {
       "clause_type": "confidentiality",
       "standard_version": "Company standard confidentiality clause",
-      "contract_version": "The contract clause for confidentiality is missing entirely (null value provided)....",
+      "contract_version": "Confidentiality clause is missing entirely....",
       "deviation_severity": "critical",
-      "explanation": "The contract clause for confidentiality is missing entirely (null value provided)."
+      "explanation": "Confidentiality clause is missing entirely."
     },
     {
       "clause_type": "intellectual_property",
       "standard_version": "Company standard intellectual_property clause",
-      "contract_version": "The contract clause is missing entirely, which represents a critical gap in intellectual property protection....",
+      "contract_version": "Contract clause for intellectual property is null, which is a complete omission and creates significant legal and business risk as there is no agreement on ownership of IP created during the engagemen...",
       "deviation_severity": "critical",
-      "explanation": "The contract clause is missing entirely, which represents a critical gap in intellectual property protection."
+      "explanation": "Contract clause for intellectual property is null, which is a complete omission and creates significant legal and business risk as there is no agreement on ownership of IP created during the engagement."
     },
     {
       "clause_type": "warranties",
       "standard_version": "Company standard warranties clause",
-      "contract_version": "The contract clause for warranties is null, meaning no warranties are included in the contract. This is a significant deviation from the company standard, which includes express warranties for workman...",
+      "contract_version": "The contract clause for warranties is completely missing (null). This is a significant deviation from the company standard, which includes specific warranty terms regarding defects and performance....",
       "deviation_severity": "critical",
-      "explanation": "The contract clause for warranties is null, meaning no warranties are included in the contract. This is a significant deviation from the company standard, which includes express warranties for workmanship, materials, and substantial performance in accordance with documentation."
+      "explanation": "The contract clause for warranties is completely missing (null). This is a significant deviation from the company standard, which includes specific warranty terms regarding defects and performance."
     },
     {
       "clause_type": "dispute_resolution",
       "standard_version": "Company standard dispute_resolution clause",
-      "contract_version": "Contract clause for dispute resolution is missing entirely....",
+      "contract_version": "The contract clause for dispute resolution is entirely missing (null), which deviates significantly from the company standard that mandates a multi-step dispute resolution process including negotiatio...",
       "deviation_severity": "critical",
-      "explanation": "Contract clause for dispute resolution is missing entirely."
+      "explanation": "The contract clause for dispute resolution is entirely missing (null), which deviates significantly from the company standard that mandates a multi-step dispute resolution process including negotiation, mediation, and binding arbitration."
     }
   ],
   "legal_advice": [
     {
-      "topic": "Missing Termination Clause",
-      "advice": "This clause poses critical legal risk that requires immediate attention. Contract clause for termination is missing.",
+      "topic": "Absence of Termination Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. Contract clause for termination is null, indicating its absence or unstated nature. This represents a significant deviation from company standards, which require a defined termination clause.",
       "risk_level": "critical",
       "supporting_law": "General Contract Law Principles",
       "recommendations": [
-        "The termination clause is a fundamental part of any contract. Its absence creates significant legal and business risk, as it leaves the parties without a clear framework for ending the agreement. This needs to be added immediately."
+        "The contract must include a termination clause that aligns with the company's standard termination provisions. This clause should detail conditions for termination for cause and convenience, and outline the consequences of termination."
       ]
     },
     {
-      "topic": "Significant deviation in payment terms and pricing model",
-      "advice": "This clause poses significant legal risk that should be addressed. The contract clause does not specify a payment due date (e.g., net 30 days).; The contract clause does not mention any late payment fees or interest.; The contract clause does not specify how invoices will be issued or delivered.; The contract clause uses a cost-plus or fair market value approach for charging services, which is fundamentally different from the standard net 30 payment terms.",
-      "risk_level": "high",
+      "topic": "Payment Terms Mismatch and Absence of Key Provisions",
+      "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause is entirely in Arabic and discusses cost-sharing for goods and services, which is fundamentally different from the English and Arabic company standard clause that specifies payment terms like invoicing, due dates, and late fees for services rendered and goods provided by QDB.; The contract clause does not mention any payment terms, due dates, or late fee structures, which are key elements of the company standard.; The contract clause's focus on 'cost-plus' and 'fair value' for services is a significant deviation from the standard invoice-based payment terms.",
+      "risk_level": "critical",
       "supporting_law": "General Contract Law Principles",
       "recommendations": [
-        "The contract clause significantly deviates from company standards. It lacks essential payment terms such as due dates and late fees, and proposes a different pricing model (cost-plus/fair market value) instead of standard payment terms. This clause should be renegotiated to align with the company standard payment terms, including specifying invoice issuance, payment due dates, and late fee provisions."
+        "The contract clause needs to be rewritten to align with the company standard payment terms. Specifically, it should include provisions for invoicing, payment due dates (e.g., net 30 days), and late fees. The current cost-sharing model is not acceptable as a substitute for standard payment terms."
       ]
     },
     {
@@ -172,29 +172,29 @@
       "risk_level": "critical",
       "supporting_law": "General Contract Law Principles",
       "recommendations": [
-        "The indemnification clause is a critical component of risk allocation in a contract. Its absence creates significant legal and business risk for the company. This clause must be added to the contract and should align with the company standard clause provided."
+        "The contract is missing a critical indemnification clause. This exposes the company to significant legal and financial risk. The standard indemnification clause, as provided, should be inserted into the agreement."
       ]
     },
     {
       "topic": "Missing Confidentiality Clause",
-      "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause for confidentiality is missing entirely (null value provided).",
+      "advice": "This clause poses critical legal risk that requires immediate attention. Confidentiality clause is missing entirely.",
       "risk_level": "critical",
       "supporting_law": "General Contract Law Principles",
       "recommendations": [
-        "The confidentiality clause must be inserted into the contract to protect sensitive information. A clause similar to the company standard should be used, ensuring clear definitions of confidential information, obligations of the receiving party, and exclusions from confidentiality."
+        "The contract is missing a confidentiality clause. This is a critical omission and must be addressed by including a comprehensive confidentiality clause that aligns with company standards. If the contract cannot be amended, it should not proceed."
       ]
     },
     {
-      "topic": "Missing Intellectual Property Clause",
-      "advice": "This clause poses critical legal risk that requires immediate attention. The contract clause is missing entirely, which represents a critical gap in intellectual property protection.",
+      "topic": "Omission of Intellectual Property Clause",
+      "advice": "This clause poses critical legal risk that requires immediate attention. Contract clause for intellectual property is null, which is a complete omission and creates significant legal and business risk as there is no agreement on ownership of IP created during the engagement.",
       "risk_level": "critical",
       "supporting_law": "General Contract Law Principles",
       "recommendations": [
-        "The contract clause for intellectual property is entirely absent. This is a critical omission. The company standard clause, which assigns all intellectual property developed during the performance of services to the company, must be included in the contract."
+        "The contract must include a comprehensive intellectual property clause that clearly assigns ownership of all developed IP to the Company, mirroring the provided company standard. Ensure the clause is not null and accurately reflects the agreed-upon terms for IP."
       ]
     }
   ],
-  "analyzed_at": "2025-10-25T23:37:43.689397",
+  "analyzed_at": "2025-10-26T07:37:57.740937",
   "contract_metadata": {
     "contract_name": "analyzed_contract.docx",
     "parties": [
@@ -215,7 +215,7 @@
   "legal_compliance": {
     "contract_id": "TEST_001",
     "jurisdiction": "QATAR",
-    "analyzed_at": "2025-10-25T23:38:01.066541",
+    "analyzed_at": "2025-10-26T07:38:33.463107",
     "compliance_summary": {
       "overall_compliance_score": 50,
       "status": "non_compliant",
@@ -265,13 +265,27 @@
         "specific_articles_violated": [],
         "compliance_issues": [],
         "legal_risks": [],
-        "recommendations": [],
+        "recommendations": [
+          "Conduct a thorough legal review of all existing contracts against the cited Qatari laws.",
+          "Update internal policies and procedures to align with data protection, labor, and consumer protection requirements.",
+          "Provide training to relevant personnel on legal compliance obligations.",
+          "Establish robust record-keeping for data processing, employment terms, and financial transactions.",
+          "Seek specialized legal counsel for complex contractual arrangements, intellectual property matters, and tax compliance.",
+          "Regularly monitor for updates or amendments to Qatari legislation."
+        ],
         "severity": "medium",
         "missing_required_clauses": []
       }
     ],
     "legal_risks": [],
-    "recommendations": [],
+    "recommendations": [
+      "Conduct a thorough legal review of all existing contracts against the cited Qatari laws.",
+      "Update internal policies and procedures to align with data protection, labor, and consumer protection requirements.",
+      "Provide training to relevant personnel on legal compliance obligations.",
+      "Establish robust record-keeping for data processing, employment terms, and financial transactions.",
+      "Seek specialized legal counsel for complex contractual arrangements, intellectual property matters, and tax compliance.",
+      "Regularly monitor for updates or amendments to Qatari legislation."
+    ],
     "critical_violations": [],
     "metadata": {
       "total_laws_available": 4,

@@ -1,10 +1,26 @@
-QATAR COMMERCIAL COMPANIES LAW
-
 Article 15: Authority to Contract
 Company representatives must have proper authority. Board approval required for material contracts.
+
+Article 20: Corporate Capacity
+Companies bound by acts within corporate purpose.
+
+Article 25: Ultra Vires Doctrine
+Acts beyond corporate capacity may be voidable.
+
+Article 30: Director Duties
+Fiduciary duties of care and loyalty. Conflict disclosure required.
 
 Article 45: Related Party Transactions
 Contracts with directors/shareholders require disclosure and must be arm's length. Conflict rules apply.
 
+Article 50: Shareholder Approval
+Major transactions require shareholder approval.
+
+Article 55: Capital Maintenance
+Distributions cannot impair capital.
+
 Article 60: Financial Obligations
 Companies must maintain adequate capital. Cannot enter contracts imperiling solvency.
+
+Article 65: Corporate Records
+Minutes and resolutions must be maintained.

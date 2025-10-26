@@ -1,28 +1,65 @@
-QATAR CIVIL CODE - CONTRACT LAW PROVISIONS
-
 Article 171: Contract Formation
-A contract is validly formed when there is a clear offer, acceptance, legal capacity, and lawful object.
+A contract is validly formed when there is a clear offer, acceptance, legal capacity, and lawful object. Electronic contracts are valid. Verbal contracts binding under QAR 10,000.
 
-Article 172: Written Requirements  
-Contracts exceeding QAR 10,000 must be in writing. Real estate and agency agreements must be written.
+Article 172: Written Requirements
+Contracts exceeding QAR 10,000 must be in writing. Real estate and agency agreements must be written. Electronic signatures valid.
+
+Article 173: Good Faith Requirement
+Parties must perform contracts in good faith. Bad faith damages available.
+
+Article 174: Public Policy
+Contracts violating public policy or morals are void.
+
+Article 175: Capacity Requirements
+Minors under 18 lack capacity. Corporate entities must have proper authorization.
+
+Article 180: Interpretation Rules
+Ambiguities construed against drafter. Commercial context considered.
 
 Article 185: Contract Termination
 Contracts may be terminated by: mutual consent, performance, expiration, material breach, or force majeure.
 
+Article 186: Material Breach Definition
+Failure that substantially deprives benefit. 30-day cure period reasonable.
+
 Article 190: Limitation of Liability
 Parties may limit liability but CANNOT exclude liability for: fraud, gross negligence, personal injury, or public policy violations.
+
+Article 191: Liquidated Damages
+Must be reasonable estimate of actual damages. Penalties unenforceable.
 
 Article 195: Governing Law
 Parties may choose governing law. If not specified, Qatar law applies. Mandatory Qatar provisions cannot be excluded.
 
 Article 200: Confidentiality
-Parties must maintain confidentiality of proprietary information. Obligations survive termination.
+Parties must maintain confidentiality of proprietary information. Obligations survive termination for 3 years minimum.
+
+Article 205: Assignment and Delegation
+Rights assignable unless personal. Duties delegable with consent.
 
 Article 210: Intellectual Property
 Unless specified otherwise, IP rights belong to creator. Work-for-hire must be explicit. Clients should own deliverables they pay for.
 
+Article 215: Warranties
+Implied warranty of merchantability. Fitness for purpose implied if specified.
+
 Article 220: Payment Terms
 Payment terms must be clear. Late payment interest maximum 9% annually. Payment cannot be unreasonably withheld.
 
+Article 225: Set-off Rights
+Mutual debts may be set off. Notice required.
+
 Article 230: Force Majeure
 Force majeure events excuse performance. Party must give prompt notice and mitigate impact.
+
+Article 235: Notice Provisions
+Written notice required. Deemed received 3 business days after mailing.
+
+Article 240: Severability
+Invalid provisions severable. Remainder enforceable.
+
+Article 245: Entire Agreement
+Contract supersedes prior agreements. Modifications must be written.
+
+Article 250: Third Party Rights
+No third party benefits unless specified.
