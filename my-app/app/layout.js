@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./i18n";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "./globals.css";
+import "../styles/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
